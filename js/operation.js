@@ -17,7 +17,7 @@ function closep() {
     window.close()
 }
 function moviesh() {
-    window.location.replace("jsp/movie.html");
+    window.location.replace("movie/movie.html");
     window.close()
 }
 function fad() {
