@@ -16,7 +16,7 @@ function closep() {
     window.close()
 }
 function backing(){
-	window.location.href = "../index.jsp";
+	window.location.href = "../index.html";
     window.close()
 }
 function fad() {
