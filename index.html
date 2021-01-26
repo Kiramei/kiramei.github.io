@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="&copy;Kiramei">
+    <meta name="keywords" content="Kiramei,kiramei">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=0.5,minimum-scale=2.0,user-scalable=no"/>
+    <meta name="robots" content="index,follow">
+    <title>Kiramei ~The Eternal Light~</title>
+		<link rel="icon" type="image/x-icon" href="fav.ico" />
+    <link rel="stylesheet" href="css/basic.css" media="all">
+    <link rel="stylesheet" href="css/sakura.css" media="all">
+    <link rel="stylesheet" href="css/slick.css" media="all">
+    <script src="js/jquery.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/anim.js" type="text/javascript"></script>
+    <script src="js/operation.js"></script>
+    <script src="js/jquery.parallax.js"></script>
+    <script src="js/slick.js"></script>
+
+    <script>
+        var mobileUrl = 'mobile/index.jsp';
+        var mobileAgent = new Array("iphone", "ipod", "ipad", "android", "mobile", "blackberry", "webos", "incognito", "webmate", "bada", "nokia", "lg", "ucweb", "skyfire");
+        var browser = navigator.userAgent.toLowerCase();
+        var isMobile = false;
+        for (var i=0; i<mobileAgent.length; i++){
+            if (browser.indexOf(mobileAgent[i])!=-1){
+                isMobile = true;
+                break;
+            }
+        }
+        if(isMobile){
+            location.href = mobileUrl;
+        }
+    </script>
+</head>
+<body>
+<div class="full">
+    <!-- loader -->
+    <div id="loader"><img src="img/logo.png" width="77%" draggable="false" alt=""></div>
+    <div id="fade"></div>
+    <!-- Main Panel -->
+    <div class="main">
+        <div class="snow-container"></div>
+        <div id="scene" data-isscale="true">
+            <div class="background">
+                <div class="layer" data-depth="0.4"><img
+                        src="img/4.jpeg" draggable="false" alt=""/></div>
+            </div>
+        </div>
+        <div id="scenes" data-isscale="true">
+            <div class="background_b">
+                <div class="layer" data-depth="0.4"><img
+                        src="img/4_blur.jpeg" draggable="false" alt=""/></div>
+            </div>
+        </div>
+        <div id="por" data-isym="true">
+            <div class="top_logo">
+                <div class="layer" data-depth="0.2"><img
+                        src="img/2A3G43B4F2D32G.png" draggable="false" alt=""></div>
+            </div>
+        </div>
+        <!--Menu section-->
+        <div class="menu" id="ost">
+            <div class="layer" data-depth="0.13">
+                <div class="menu_border" id="fir"><img src="img/border.png"
+                                                       draggable="false" alt=""/></div>
+            </div>
+            <div class="layer" data-depth="0.1">
+                <div class="menu_section"><a href="index.jsp">
+                    <div class="protext"
+                         style="margin-left:380%">Top
+                    </div>
+                </a></div>
+            </div>
+            <div class="layer" data-depth="0.09">
+                <div class="menu_border" id="sec"><img src="img/border.png"
+                                                       draggable="false" alt=""></div>
+            </div>
+            <div class="layer" data-depth="0.07">
+                <div class="menu_section">
+                    <div class="protext"
+                         onclick="showMusicPanel()">Music
+                    </div>
+                </div>
+            </div>
+            <div class="layer" data-depth="0.05">
+                <div class="menu_border" id="thr"><img src="img/border.png"
+                                                       draggable="false" alt=""></div>
+            </div>
+            <div class="layer" data-depth="0.03">
+                <div class="menu_section">
+                    <div
+                            class="protext"
+							onclick="moviesh()">Movie
+                    </div>
+                </div>
+            </div>
+            <div class="layer" data-depth="0">
+                <div class="menu_border" id="for"><img src="img/border.png"
+                                                       draggable="false" alt=""></div>
+            </div>
+            <div class="layer" data-depth="-0.03">
+                <div class="menu_section">
+                    <div class="protext"
+                         onclick="showAlbum()">Album
+                    </div>
+                </div>
+            </div>
+            <div class="layer" data-depth="-0.05">
+                <div class="menu_border" id="fif"><img src="img/border.png"
+                                                       draggable="false" alt=""></div>
+            </div>
+            <div class="layer" data-depth="-0.07">
+                <div class="menu_section">
+                    <div class="protext"
+                         onclick="showEvent()">Event
+                    </div>
+                </div>
+            </div>
+            <div class="layer" data-depth="-0.09">
+                <div class="menu_border" id="six"><img src="img/border.png"
+                                                       draggable="false" alt=""></div>
+            </div>
+            <div class="layer" data-depth="-0.1">
+                <div class="menu_section">
+                    <div class="protext"
+                         onclick="closed()">Quit
+                    </div>
+                </div>
+            </div>
+            <div class="layer" data-depth="-0.13">
+                <div class="menu_border" id="sev"><img src="img/border.png"
+                                                       draggable="false" alt=""></div>
+            </div>
+        </div>
+        <!-- Music section -->
+        <div class="music">
+            <div class="mae">
+                <div class="fo"><</div>
+            </div>
+            <div class="musicPanel">
+                <div class="music_section" onclick="listen1()">
+                    <div class="fp" id="yami">闇の世界で光を探す</div>
+                </div>
+                <div class="music_section" onclick="listen2()">
+                    <div class="fp" id="atsui">暑い日々</div>
+                </div>
+                <div class="music_section" onclick="listen3()">
+                    <div class="fp" id="hoshi">星空を見上げ</div>
+                </div>
+            </div>
+            <div class="ado">
+                <div class="fo">></div>
+            </div>
+        </div>
+        <!-- Album section -->
+        <div class="albox">
+            <div class="albumPanel">
+                <img src="img/3.jpeg" alt=""/>
+                <img src="img/4.jpeg" alt=""/>
+                <img src="img/5.jpeg" alt=""/>
+                <img src="img/6.jpeg" alt=""/>
+                <img src="img/3.jpeg" alt=""/>
+                <img src="img/4.jpeg" alt=""/>
+                <img src="img/5.jpeg" alt=""/>
+                <img src="img/6.jpeg" alt=""/>
+                <img src="img/3.jpeg" alt=""/>
+                <img src="img/4.jpeg" alt=""/>
+                <img src="img/5.jpeg" alt=""/>
+                <img src="img/6.jpeg" alt=""/>
+            </div>
+            <div class="albumPanel_nav">
+                <img src="img/3.jpeg" alt=""/>
+                <img src="img/4.jpeg" alt=""/>
+                <img src="img/5.jpeg" alt=""/>
+                <img src="img/6.jpeg" alt=""/>
+                <img src="img/3.jpeg" alt=""/>
+                <img src="img/4.jpeg" alt=""/>
+                <img src="img/5.jpeg" alt=""/>
+                <img src="img/6.jpeg" alt=""/>
+                <img src="img/3.jpeg" alt=""/>
+                <img src="img/4.jpeg" alt=""/>
+                <img src="img/5.jpeg" alt=""/>
+                <img src="img/6.jpeg" alt=""/>
+            </div>
+            <div class="button" onclick="back()">←&nbsp;&nbsp;&nbsp;&nbsp;Back</div>
+        </div>
+        <!-- Event section -->
+        <div class="event_ue">
+            <div class="ef">
+                Event
+            </div>
+        </div>
+        <div class="event_box">
+            <div class="event event-p">
+                <div class="scrollbar"></div>
+                <div class="event_psg">
+                    <div class="event_title">
+                        新しいプロジェクト
+                    </div>
+                    ｢Video2Text」プロジェクトです、<a
+                        href="https://github.com/Kiramei/Video2Text">ここで点击クリックすると見てください</a>
+                    <div class="event_date">
+                        配信時間：2020/2/13
+                    </div>
+                </div>
+                <div class="event_psg">
+                    <div class="event_title">
+                        新しいプロジェクト
+                    </div>
+                    ｢Dingtalk Boomer」プロジェクトです、<a
+                        href="https://github.com/Kiramei/Dingtalk-Boomer">ここで点击クリックすると見てください</a>
+                    <div class="event_date">
+                        配信時間：2020/2/13
+                    </div>
+                </div>
+                <div class="event_psg">
+                    <div class="event_title">
+                        音楽アップロード
+                    </div>
+                    ｢光は遠い」音楽ファイルです、<a href="https://kiramei.github.io/pages/source/toi.zip">ここをクリックしてダウンロードしください</a>
+                    <div class="event_date">
+                        配信時間：2020/2/10
+                    </div>
+                </div>
+                <div class="event_psg">
+                    <div class="event_title">
+                        音楽プラットフォームの紹介
+                    </div>
+                    <span style="color: red; ">僕は今は「Netease Cloud Music｣に音楽を作りているの、どうかよろしくたのむ！</span>　
+                    <div class="event_date">
+                        配信時間：2020/1/26
+                    </div>
+                </div>
+                <div class="event_psg">
+                    <div class="event_title">
+                        音楽アップロード
+                    </div>
+                    ｢星空を見上げ」音楽ファイルです、<a href="https://kiramei.github.io/pages/source/hoshi.zip">ここをクリックしてダウンロードしください</a>
+                    <div class="event_date">
+                        配信時間：2020/1/24
+                    </div>
+                </div>
+                <div class="event_psg">
+                    <div class="event_title">
+                        節日祝福
+                    </div>
+                    <span style="color: red; ">新し一年が始まりました、今年間も頑張りましょう！</span>
+                    <div class="event_date">
+                        配信時間：2020/1/24
+                    </div>
+                </div>
+                <div class="event_psg">
+                    <div class="event_title">
+                        音楽アップロード
+                    </div>
+                    ｢暑い日々｣音楽ファイルです、<a href="https://kiramei.github.io/pages/source/asui.zip">ここをクリックしてダウンロードしください</a>
+                    <div class="event_date">
+                        配信時間：2020/1/24
+                    </div>
+                </div>
+                <div class="event_psg">
+                    <div class="event_title">
+                        音楽アップロード
+                    </div>
+                    ｢闇の世界で光を探す｣音楽ファイルです、<a
+                        href="https://kiramei.github.io/pages/source/yami.zip">ここをクリックしてダウンロードしください</a>
+                    <div class="event_date">
+                        配信時間：2020/1/24
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="event_shita" onclick="eback()">
+            <div class="ff">
+                Back
+            </div>
+        </div>
+    </div>
+    
+    <div class="beian"><a href="http://beian.miit.gov.cn">沪ICP备20005789号</a></div>
+</div>
+</body>
+</html>
