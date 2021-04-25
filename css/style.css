@@ -1,0 +1,294 @@
+html{
+  user-select: none;
+}
+*{
+  cursor: none!important;
+  text-decoration: none;
+}
+a{
+  color: #3c3737;
+}
+body{
+  background: url('../img/rec.jpg');
+  overflow: hidden;
+  font-family: YuGothic;
+  text-rendering: optimizeSpeed;
+  font-stretch: condensed;
+  line-height: 1.5;
+}
+@font-face {
+  font-family: YuGothic;
+  src:url('YuGothic.ttf');
+}
+ul{list-style: none;padding: 0;}
+li{
+  list-style: none;
+  float: left;
+}
+#backer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: auto;
+}
+.scrollPane{
+  top:0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+z-index: 8;
+  position: fixed;
+ overflow: scroll;
+ overflow-x: hidden;
+}
+.scrollPane::-webkit-scrollbar {
+  z-index: 999;
+	width: 0.5vw;
+  min-width: 1px;
+	height: 1px
+}
+
+.scrollPane::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #ead;
+	background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,0.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0.2) 75%,transparent 75%,transparent)
+}
+
+.scrollPane::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+	background: #ededed;
+	border-radius: 10px
+}
+
+.d{
+  backdrop-filter:blur(2px);
+  background: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 200vh;
+  position:absolute;
+  top: calc( 100% - 100px );
+  left: 0;
+  font-family: YuGothic;
+  color: #3b3c3c;
+}
+.news{
+  margin-top: 15px;
+  border-top: dashed 1px #5b698d;
+}
+.news .title{
+  margin-top: 35px;
+  text-align: center;
+  font-family: YuGothic;
+  font-size: 40px;
+}
+.form{
+  font-size: 20px;
+  line-height: 40px;
+  padding-top: 8px;
+  text-align: center;
+  font-weight: 300;
+}
+.news_content{
+  padding: 3% 5% 5% 5%;
+  margin: 5% 5% 3% 5%;
+  background: #ffffff55
+}
+.news_content .title{
+  text-align: center;
+  font-size: 30px;
+}
+.news_content .content{
+  font-size: 20px;
+  margin-top: 3%;
+}
+.news_content .date{
+  font-size: 18px;
+  margin-top: 2%;
+  text-align: right;
+}
+.news_nav{
+    margin: 0 5% 3% 5%;
+
+}
+.news_block{
+  margin:0 5% 0 5%;
+      padding: 2% 2% 2% 2%;
+  background: #ffffff55;
+  text-align: center;
+}
+#bi{
+  z-index: 0;
+  animation: bog 3s;
+  transform: scale(1.02);
+}
+#bg{
+  z-index: 2;
+  animation: bog 3s;
+  transform: scale(1.02);
+}
+#t{
+  z-index: 1;
+    animation: bog 3s;
+      transform: scale(1.02);
+}
+.cursor{
+  display: none;
+    pointer-events: none;
+    position: fixed;
+    top: -8px;
+    left: -8px;
+    width: 16px;
+    height: 16px;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 50%;
+    transition: transform .2s, top .5s, left .5s, width .5s, height .5s, background-color .5s;
+    transition-timing-function: ease-out;
+    z-index: 10000;
+}
+.cursor.hov{
+  top: -32px;
+  left: -32px;
+  width: 64px;
+  height: 64px;
+  transition: .5s;
+  background: rgba(55, 55, 55, .2);
+}
+#loader {
+	width: 20%;
+	display: none;
+	position: fixed;
+	_position: absolute;
+	top: 50%;
+	left: 40%;
+	margin-top: -100px;
+	z-index: 999;
+	-webkit-animation: blink 1.5s ease-in-out infinite alternate;
+	-moz-animation: blink 1.5s ease-in-out infinite alternate;
+	animation: blink 1.5s ease-in-out infinite alternate
+}
+.fade img {
+	width: 100%;
+	opacity: 0;
+	animation-name: fade-in;
+	animation-delay: 6s;
+	animation-duration: 12s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: forwards
+}
+#fade {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background:white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 998
+}
+.top{
+  width: 100%;
+}
+#top{
+  z-index: 10;
+  left: 33vw;
+  top: 20vh;
+}
+.top img{
+  width: 30vw;
+}
+.wt{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), transparent);
+  backdrop-filter:blur(4px);
+  z-index: 9;
+}
+.pach{
+  display: flex;
+  padding: 15px 15px 15px 15px;
+  justify-content: space-between;
+}
+.rag img{
+  width: 12vw;
+  min-width:100px;
+}
+.mk{
+  font-size: 18px;
+  margin-left:70px;
+  text-align: center;
+  font-weight: 300;
+}
+a:hover{
+  color: #056c6a;
+  transition:.7s;
+}
+.rights{
+  margin-left: 300px;
+  margin-right: 50px;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  font-weight: 900;
+  font-size:18px;
+  transition: .5s;
+}
+.rights:hover{
+  background: rgba(0, 0, 0, 0.7);
+}
+/* アニメスタート */
+@-webkit-keyframes blink {
+	0% {
+		opacity: 0
+	}
+
+	100% {
+		opacity: 1
+	}
+}
+
+@-moz-keyframes blink {
+	0% {
+		opacity: 0
+	}
+
+	100% {
+		opacity: 1
+	}
+}
+
+@keyframes blink {
+	0% {
+		opacity: 0
+	}
+
+	100% {
+		opacity: 1
+	}
+}
+
+@-webkit-keyframes bog {
+	0% {
+		transform: scale(1.5)
+	}
+
+	100% {
+		transform: scale(1.02)
+	}
+}

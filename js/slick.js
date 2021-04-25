@@ -582,11 +582,11 @@
             }
 
             _.$slider.empty().append(newSlides);
-            _.$slider.children().children().children()
-                .css({
-                    'width':(85 / _.options.slidesPerRow) + '%',
-                    'display': 'inline-block'
-                });
+            // _.$slider.children().children().children()
+            //     .css({
+            //         'wi':(85 / _.options.slidesPerRow) + '%',
+            //         'display': 'inline-block'
+            //     });
 
         }
 
