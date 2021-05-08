@@ -1,0 +1,9 @@
+
+*.iml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/jsLibraryMappings.xml
+.idea/libraries/jquery.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+test.html
