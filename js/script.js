@@ -67,10 +67,13 @@ function dataPreset() {
 
 function modeCheck() {
     mode = parseInt(Cookies.get('mode'));
+    if (isNaN(mode)) {
+        Cookies.set('mode', 0);
+        mode = 0
+    }
     let m = $('.mode');
     m.css('background', mode !== 0 ? '#20A2CCAA' : '#DB5B70AA');
     m.text(mode === 0 ? 'off' : 'on');
-    if (mode === '') Cookies.set('mode', 0);
     if (mode !== 1) {
         $('#backer').html(' <div class="layer" data-depth="0.3"> <img id="t" src="img/background/all.png" alt=""/></div>');
     }
