@@ -63,7 +63,7 @@ li {
 
 *::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: #DB5B70;
+    background-color: #DB5B70AA;
     background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent)
 }
 
@@ -77,7 +77,7 @@ li {
     backdrop-filter: blur(2px);
     background: rgba(255, 255, 255, 0.5);
     width: 100%;
-    height: 2000px;
+    height: 4000px;
     position: absolute;
     top: calc(100% - 100px);
     left: 0;
@@ -97,12 +97,12 @@ li {
     font-size: 40px;
 }
 
-.musics {
+.musics ,.movies{
     margin-top: 15px;
     border-top: dashed 1px #5b698d;
 }
 
-.musics .title {
+.musics .title ,.movies .title{
     margin-top: 35px;
     text-align: center;
     font-family: YuGothic, serif;
@@ -118,8 +118,8 @@ li {
 }
 
 .news_content {
-    padding: 60px 5% 95px 5%;
-    margin: 95px 5% 60px 5%;
+    padding: 60px 80px 95px 80px;
+    margin: 95px 80px 60px 80px;
     font-weight: 500;
     border-radius: 4px;
     background: #ffffff55
@@ -154,6 +154,36 @@ li {
     text-align: center;
 }
 
+.movies_pane{
+    width: 80%;
+    height: 400px;
+    background: #ffffff3f;
+    margin: 50px 10% 50px 10%;
+}
+
+.movie-lists{
+    width: 40%;
+    height: 380px;
+    padding: 10px 3% 10px 3%;
+    overflow: auto;
+    float: left;
+}
+
+.movie-unit{
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    color: #3b3c3c;
+    border-bottom: dashed 1px;
+}
+
+.movie-display{
+    float: left;
+    margin-left: 11%;
+    width: 40%;
+    height:380px;
+}
+
 #bi {
     z-index: 0;
     animation: bog 3s;
@@ -170,6 +200,12 @@ li {
     z-index: 1;
     animation: bog 3s;
     transform: scale(1.02);
+}
+.hint{
+    font-size: 19px;
+    line-height: 50px;
+    float: left;
+    font-weight: 300;
 }
 
 .cursor {
@@ -208,6 +244,10 @@ li {
     -webkit-animation: blink 1.5s ease-in-out infinite alternate;
     -moz-animation: blink 1.5s ease-in-out infinite alternate;
     animation: blink 1.5s ease-in-out infinite alternate
+}
+
+#loader img{
+    width: 77%;
 }
 
 .fade img {
@@ -256,57 +296,89 @@ li {
     top: 0;
     left: 0;
     width: 100%;
-    height: 11.5vh;
+    height: 80px;
     background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
     backdrop-filter: blur(4px);
     z-index: 9;
 }
 
 .pach {
-    display: flex;
-    padding: 15px 1vh 15px 1vh;
-    justify-content: space-between;
+    width: 100%;
+    padding: 15px 10px 15px 10px;
+    float: left;
+}
+
+
+.rag{
+    float: left;
+    margin-left: 2%;
 }
 
 .rag img {
-    width: 30vh;
-    min-width: 100px;
+    float: left;
+    width: 200px;
 }
 
 .fi {
-    margin: auto;
+    margin-left: 25%;
 }
-
+.mode{
+    font-size: 19px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 80px;
+    height: 50px;
+    border-radius: 25px;
+    color: white;
+    background: #20A2CCaa;
+    transition: ease .3s;
+    z-index: 10;
+}
+.mode:hover{
+    opacity: 0.8;
+}
 .mk {
-    font-size: 2vh;
-    margin-left: 70px;
+    float: left;
+    margin-left: 8%;
+    margin-left: 8%;
     text-align: center;
     font-weight: 300;
+    font-size: 19px;
+    line-height: 50px;
+}
+.effect{
+    float: right;
 }
 
 a:hover {
-    color: #20A2CC;
+    color: #20A2CCAA;
     transition: .7s ease;
 }
 
 .news_block:hover {
-    background: #DB5B70;
+    background: #DB5B70AA;
     color: white;
     transition: .4s ease;
 }
 
 .rights {
-    margin-left: 300px;
-    margin-right: 50px;
-    width: 30px;
-    height: 30px;
+    position: fixed;
+    margin-left: 90%;
+    margin-top: 40%;
+    width: 60px;
+    height: 60px;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     color: white;
     text-align: center;
     font-weight: 900;
-    font-size: 18px;
+    font-size: 25px;
     transition: .5s ease;
+    z-index: 9;
+    line-height: 2.2;
 }
 
 .rights:hover {
@@ -314,7 +386,7 @@ a:hover {
 }
 
 .music_pane {
-    padding: 3% 5% 5% 5%;
+    padding: 40px 5% 70px 5%;
 }
 
 .music_list {
@@ -332,13 +404,13 @@ a:hover {
     overflow: auto;
 }
 
-.mus .title {
+.mus .title{
     padding: 8px 24px 8px 24px;
     display: inline-block;
     margin-left: 40px;
 }
 
-.mus {
+.mus{
     font-size: 18px;
     margin-top: 20px;
     padding-bottom: 20px;
@@ -352,7 +424,7 @@ a:hover {
     padding: 8px 24px 8px 24px;
     display: inline-block;
     float: right;
-    background: #DB5B70;
+    background: #DB5B70AA;
     transition: ease .3s;
     margin-right: 5%
 }
@@ -364,12 +436,11 @@ a:hover {
 .listen:active {
     background: #6E696D;
 }
-
 .down {
     border-radius: 20px;
     color: white;
     padding: 8px 24px 8px 24px;
-    background: #20A2CC;
+    background: #20A2CCAA;
     display: inline-block;
     float: right;
     transition: ease .3s;
@@ -387,7 +458,7 @@ a:hover {
 .music_controller {
     padding: 10px 10px 10px 10px;
     margin-left: 10%;
-    margin-top: 5%;
+    margin-top: 60px;
     width: 80%;
     height: 200px;
     background: #ffffff3f;
@@ -416,7 +487,7 @@ a:hover {
     display: block;
     width: 0;
     height: 5px;
-    background: #DB5B70;
+    background: #DB5B70AA;
     position: relative;
     border-radius: 5px;
     transition: width ease-out 0.3s;

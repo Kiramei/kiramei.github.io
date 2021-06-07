@@ -4,16 +4,22 @@
     <meta charset="utf-8"/>
     <meta name="author" content="&copy;Kiramei"/>
     <meta name="keywords" content="Kiramei,kiramei"/>
+    <meta name="description" content="This is Kiramei's official site. Activities are posted here">
     <meta name="viewport"
           content="width=device-width,initial-scale=1.0,maximum-scale=0.5,minimum-scale=2.0,user-scalable=no"/>
     <meta name="robots" content="index,follow"/>
     <title>Kiramei Official Site</title>
     <link rel="icon" type="image/x-icon" href="fav.ico"/>
-    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/slick.css"/>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/slick.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/js-cookie/latest/js.cookie.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
     <script type="text/javascript" src="js/jquery.parallax.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </head>
@@ -21,28 +27,28 @@
 <div class="cursor">
 </div>
 <div id="loader">
-    <img src="img/logo.png" width="77%" draggable="false" alt=""/>
+    <img src="img/logo.png" draggable="false" alt=""/>
 </div>
 <div id="fade">
 </div>
 <section class="wt">
     <div class="pach">
-        <a href="index.html">
-            <div class="rag">
-                <img src="img/top.png" alt=""/>
-            </div>
-        </a>
-        <ul class="fi">
-            <li class="mk" id="n1"><a>News</a></li>
-            <li class="mk" id="n2"><a>Music</a></li>
-            <li class="mk"><a>Video</a></li>
-            <li class="mk"><a>Gallery</a></li>
-        </ul>
-        <ul>
-            <li class="rights">↑</li>
-        </ul>
+        <div class="rag">
+            <a href="index.html">
+                <img src="img/top.png" alt=""/></a>
+        </div>
+        <div class="fi">
+        </div>
+        <div class="effect">
+            <div class="hint"></div>
+            <a>
+                <div class="mode">
+                </div>
+            </a>
+        </div>
     </div>
 </section>
+<div class="rights"></div>
 <div class="scrollPane">
     <div class="scrollbar"></div>
     <div class="top">
@@ -53,137 +59,15 @@
         </div>
         <div class="d">
             <div class="form">
-                Scroll To See More
-                <br/> |
             </div>
             <div class="news">
                 <div class="title">
-                    News
                 </div>
             </div>
-            <div class="news_pane">
-                <div class="news_content">
-                    <div class="title">
-                        新しいアプリケーション
-                    </div>
-                    <div class="content">
-                        ｢Manga Surfer」プロジェクトです、
-                        <br/>
-                        <a href="https://github.com/Kiramei/MangaSurfer/releases/">Androidはここでクリックするとダウンロードしてください</a>
-                        <br/>
-                        <a href="https://www.mediafire.com/file/1flhu6xaraexdgq/QuickDownloader_installer.exe/file">Windowsはここでクリックするとダウンロードしてください</a>
-                    </div>
-                    <div class="date">
-                        —————— 2021/1/26
-                    </div>
-                </div>
-                <div class="news_content">
-                    <div class="title">
-                        新しいプロジェクト
-                    </div>
-                    <div class="content">
-                        ｢Rush Spider」プロジェクトです、
-                        <a href="https://github.com/Kiramei/RushSpider">ここでクリックすると見てください</a>
-                    </div>
-                    <div class="date">
-                        —————— 2021/1/26
-                    </div>
-                </div>
-                <div class="news_content">
-                    <div class="title">
-                        新しいプロジェクト
-                    </div>
-                    <div class="content">
-                        ｢Video2Text」プロジェクトです、
-                        <a href="https://github.com/Kiramei/Video2Text">ここでクリックすると見てください</a>
-                    </div>
-                    <div class="date">
-                        —————— 2020/2/13
-                    </div>
-                </div>
-                <div class="news_content">
-                    <div class="title">
-                        音楽アップロード
-                    </div>
-                    <div class="content">
-                        ｢光は遠い」音楽ファイルです、
-                        <a href="https://kiramei.github.io/pages/source/toi.zip">ここをクリックしてダウンロードしください</a>
-                    </div>
-                    <div class="date">
-                        —————— 2020/2/10
-                    </div>
-                </div>
-                <div class="news_content">
-                    <div class="title">
-                        音楽プラットフォームの紹介
-                    </div>
-                    <div class="content">
-                        僕は今は「Netease Cloud Music｣に音楽を作りているの、どうかよろしくたのむ！
-                    </div>
-                    <div class="date">
-                        —————— 2020/1/26
-                    </div>
-                </div>
-                <div class="news_content">
-                    <div class="title">
-                        音楽アップロード
-                    </div>
-                    <div class="content">
-                        ｢星空を見上げ」音楽ファイルです、
-                        <a href="https://kiramei.github.io/pages/source/hoshi.zip">ここをクリックしてダウンロードしください</a>
-                    </div>
-                    <div class="date">
-                        —————— 2020/1/24
-                    </div>
-                </div>
-                <div class="news_content">
-                    <div class="title">
-                        音楽アップロード
-                    </div>
-                    <div class="content">
-                        ｢闇の世界で光を探す」音楽ファイルです、
-                        <a href="https://kiramei.github.io/pages/source/yami.zip">ここをクリックしてダウンロードしください</a>
-                    </div>
-                    <div class="date">
-                        —————— 2020/1/24
-                    </div>
-                </div>
-            </div>
-            <div class="news_nav">
-                <a>
-                    <div class="news_block">
-                        2021/1/26 (2)
-                    </div>
-                </a>
-                <a>
-                    <div class="news_block">
-                        2021/1/26 (1)
-                    </div>
-                </a>
-                <a>
-                    <div class="news_block">
-                        2020/2/13
-                    </div>
-                </a>
-                <a>
-                    <div class="news_block">
-                        2020/1/26
-                    </div>
-                </a>
-                <a>
-                    <div class="news_block">
-                        2020/1/24 (2)
-                    </div>
-                </a>
-                <a>
-                    <div class="news_block">
-                        2020/1/24 (1)
-                    </div>
-                </a>
-            </div>
+            <div class="news_pane"></div>
+            <div class="news_nav"></div>
             <div class="musics">
                 <div class="title">
-                    Music
                 </div>
             </div>
             <div class="music_pane">
@@ -193,7 +77,6 @@
                 </div>
                 <div class="music_controller">
                     <div class="title">
-                        Please choose one listed to play
                     </div>
                     <div class="control">
                         <div class="timeline">
@@ -202,7 +85,7 @@
                         <div class="controller">
                             <a>
                                 <div class="pause">
-                                    <svg t="1620388647690" fill="#0000009f" class="icon" viewBox="0 0 1024 1024"
+                                    <svg x="1620388647690" fill="#0000009f" class="icon" viewBox="0 0 1024 1024"
                                          xmlns="http://www.w3.org/2000/svg" p-id="1637" width="22" height="22">
                                         <path d="M810.666667 512c0 14.933333-8.533333 27.733333-19.2 34.133333l0 0L273.066667 846.933333l0 0c-6.4 4.266667-12.8 6.4-19.2 6.4-21.333333 0-40.533333-17.066667-40.533333-40.533333L213.333333 211.2c0-21.333333 17.066667-40.533333 40.533333-40.533333 6.4 0 14.933333 2.133333 19.2 6.4l0 0 518.4 300.8 0 0C802.133333 484.266667 810.666667 497.066667 810.666667 512z"
                                               p-id="1638"></path>
@@ -213,38 +96,82 @@
                     </div>
                 </div>
             </div>
+            <div class="movies">
+                <div class="title">
+                </div>
+            </div>
+            <div class="movies_pane">
+                <div class="movie-lists">
+                    <div class="movie-unit">
+                        nda
+                    </div> <div class="movie-unit">
+                    nda
+                </div> <div class="movie-unit">
+                    nda
+                </div> <div class="movie-unit">
+                    nda
+                </div> <div class="movie-unit">
+                    nda
+                </div> <div class="movie-unit">
+                    nda
+                </div> <div class="movie-unit">
+                    nda
+                </div> <div class="movie-unit">
+                    nda
+                </div> <div class="movie-unit">
+                    nda
+                </div> <div class="movie-unit">
+                    nda
+                </div> <div class="movie-unit">
+                    nda
+                </div> <div class="movie-unit">
+                    nda
+                </div> <div class="movie-unit">
+                    nda
+                </div> <div class="movie-unit">
+                    nda
+                </div> <div class="movie-unit">
+                    nda
+                </div> <div class="movie-unit">
+                    nda
+                </div>
+                </div>
+                <div class="movie-display">
+                    <video id="video"></video>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <div id="backer" data-isscale="true">
-    <div class="layer" data-depth="0.14">
+    <div class="layer" data-depth="0.2">
         <img id="bi" src="img/background/back_1.png" alt=""/>
     </div>
-    <div class="layer" data-depth="0.03">
+    <div class="layer" data-depth="0。0">
         <img id="t" src="img/background/tree4.png" alt=""/>
     </div>
-    <div class="layer" data-depth="0.05">
+    <div class="layer" data-depth="0.0">
         <img id="t" src="img/background/tree7.png" alt=""/>
     </div>
-    <div class="layer" data-depth="0.17">
+    <div class="layer" data-depth="0.2">
         <img id="t" src="img/background/tree6.png" alt=""/>
     </div>
-    <div class="layer" data-depth="0.33">
+    <div class="layer" data-depth="0.3">
         <img id="t" src="img/background/tree5.png" alt=""/>
     </div>
-    <div class="layer" data-depth="0.07">
+    <div class="layer" data-depth="0.0">
         <img id="t" src="img/background/tree8.png" alt=""/>
     </div>
-    <div class="layer" data-depth="0.11">
+    <div class="layer" data-depth="0.1">
         <img id="t" src="img/background/tree3.png" alt=""/>
     </div>
-    <div class="layer" data-depth="0.22">
+    <div class="layer" data-depth="0.2">
         <img id="t" src="img/background/tree2.png" alt=""/>
     </div>
-    <div class="layer" data-depth="0.45">
+    <div class="layer" data-depth="0.4">
         <img id="t" src="img/background/tree1.png" alt=""/>
     </div>
-    <div class="layer" data-depth="0.28">
+    <div class="layer" data-depth="0.3">
         <img id="bg" src="img/background/ground.png" alt=""/>
     </div>
 </div>

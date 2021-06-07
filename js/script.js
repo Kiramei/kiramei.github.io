@@ -1,11 +1,10 @@
-$("head").append('<style>#container { display: none; } #fade, #loader { display: block; }</style>');
-
 const mobileAgent = ["iphone", "ipod", "ipad", "android", "mobile", "blackberry", "webos", "incognito", "webmate", "bada", "nokia", "lg", "ucweb", "skyfire"];
 const browser = navigator.userAgent.toLowerCase();
 let isMobile = false;
 let height = $(window).height(), width = $(window).width();
 for (let i = 0; i < mobileAgent.length; i++) {
     if (browser.indexOf(mobileAgent[i]) !== -1) {
+        Cookies.set('mode', '0');
         isMobile = true;
         break;
     }
@@ -13,32 +12,70 @@ for (let i = 0; i < mobileAgent.length; i++) {
 
 
 jQuery(function () {
-    $("#fade").delay(900).fadeOut(800);
-    $("#loader").delay(900).fadeOut(400);
-    sizeSet();
+    dataPreset();
+    setSwitch();
+    modeCheck();
     jsonParse();
+    sizeSet();
     setBackgroundSize();
     menuSet();
-
-    $("head").append("<style>.top_logo{-webkit-transition: all 0.1s;-moz-transition: all 0.1s;-o-transition: all 0.1s;transition: all 0.1s;}</style>");
-    if (!isMobile) {
-        $('#backer').parallax();
-        $('#top').parallax();
-    }
-});
-
-$(function () {
-    setSlick();
+    lastSet();
 });
 
 
 let musics;
+let news;
 let flag = 0;
 let audio;
+let mode;
+
 
 /*
   functions below.
 */
+
+function dataPreset() {
+    $("#fade").delay(900).fadeOut(800);
+    $("#loader").delay(900).fadeOut(400);
+    if ($('.scrollPane').scrollTop() === 0) $('.rights').css('opacity', 0);
+    $('.form').html('Scroll To See More<br/>|');
+    $('.rights').text('↑');
+    let p = ['News', 'Music', 'Video', 'Gallery'];
+    for (let i = 0; i < 4; i++) {
+        $('.fi').append('<div class="mk" id="n' + (i + 1) + '"><a>' + p[i] + '</a></div>');
+    }
+    $('.hint').text('Effect:');
+    $('.news .title').text('News');
+    const url2 = "../json/news_list.json";
+    const request2 = new XMLHttpRequest();
+    request2.open("get", url2);
+    request2.send(null);
+    request2.onload = function () {
+        if (request2.status === 200) {
+            news = JSON.parse(request2.responseText);
+            for (let i = 0; i < news.length; i++) {
+                $('.news_pane').append('<div class="news_content"><div class="title">' + news[i].title + '</div><div class="content">' + news[i].content + '</div><div class="date">' + news[i].date1 + "</div></div>");
+                $('.news_nav').append('<a><div class="news_block">' + news[i].date2 + '</div></a>');
+            }
+            setSlick();
+        }
+    }
+    $('.music_controller .title').text('Please choose one listed to play');
+    $('.musics .title').text('Music');
+    $('.movies .title').text('Movie');
+}
+
+function modeCheck() {
+    mode = parseInt(Cookies.get('mode'));
+    let m = $('.mode');
+    m.css('background', mode !== 0 ? '#20A2CCAA' : '#DB5B70AA');
+    m.text(mode === 0 ? 'off' : 'on');
+    if (mode === '') Cookies.set('mode', 0);
+    if (mode !== 1) {
+        $('#backer').html(' <div class="layer" data-depth="0.3"> <img id="t" src="img/background/all.png" alt=""/></div>');
+    }
+}
+
 function jsonParse() {
     const url = "../json/music_list.json";
     const request = new XMLHttpRequest();
@@ -69,7 +106,9 @@ function addPlay() {
             function () {
                 audio.play();
             });
-        audio.play();
+        audio.play().then(r => {
+            console.log(r)
+        });
         $('.pause').html('<svg t="1620046119918" fill="#0000009f" class="icon" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" p-id="2002" width="20" height="20"><path d="M325.008696 0c-28.93913 0-51.2 22.26087-51.2 51.2l0 919.373913c0 28.93913 22.26087 51.2 51.2 51.2s51.2-22.26087 51.2-51.2L376.208696 53.426087C376.208696 24.486957 351.721739 0 325.008696 0zM698.991304 0c-28.93913 0-51.2 22.26087-51.2 51.2l0 919.373913c0 28.93913 22.26087 51.2 51.2 51.2s51.2-22.26087 51.2-51.2L750.191304 53.426087C752.417391 24.486957 727.930435 0 698.991304 0z" p-id="2003"></path></svg>');
         setInterval(function () {
             $('.timeline').children().css({width: (audio.currentTime / audio.duration).toFixed(4) * 100 + "%"});
@@ -134,11 +173,6 @@ function setBackgroundSize() {
         m.removeAttr("style");
         m.css('width', width);
     }
-    if (width < 1015) {
-        $('.fi').css('display', 'none');
-    } else {
-        $('.fi').css('display', 'block');
-    }
 }
 
 function setSlick() {
@@ -180,13 +214,19 @@ function menuSet() {
 
     $('#n1').on("click", function () {
         $(".scrollPane").stop().animate({
-                scrollTop: height - 100
+                scrollTop: height - 80
             },
             600);
     });
     $('#n2').on("click", function () {
         $(".scrollPane").stop().animate({
-                scrollTop: height + 547 + 37 + 50
+                scrollTop: height + 650
+            },
+            600);
+    });
+    $('#n3').on("click", function () {
+        $(".scrollPane").stop().animate({
+                scrollTop: height + 1470
             },
             600);
     });
@@ -214,4 +254,24 @@ function sizeSet() {
                 200);
         }
     });
+}
+
+function setSwitch() {
+    $('.mode').on('click', function () {
+        Cookies.set('mode', mode = (mode === 0 ? 1 : 0));
+        console.log(mode)
+        let m = $('.mode');
+        m.css('background', mode !== 0 ? '#20A2CCAA' : '#DB5B70AA');
+        m.text(mode === 0 ? 'off' : 'on');
+    });
+}
+
+function lastSet() {
+    let h = $('head');
+    h.append('<style>#container { display: none; } #fade, #loader { display: block; }</style>');
+    h.append("<style>.top_logo{-webkit-transition: all 0.1s;-moz-transition: all 0.1s;-o-transition: all 0.1s;transition: all 0.1s;}</style>");
+    if (!isMobile) {
+        $('#backer').parallax();
+        $('#top').parallax();
+    }
 }
