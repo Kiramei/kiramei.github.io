@@ -76,7 +76,7 @@ li {
     backdrop-filter: blur(2px);
     background: rgba(255, 255, 255, 0.5);
     width: 100%;
-    height: 4000px;
+    height: 3000px;
     position: absolute;
     top: calc(100% - 100px);
     left: 0;
@@ -84,28 +84,17 @@ li {
     color: #3b3c3c;
 }
 
-.news {
-    margin-top: 15px;
-    border-top: dashed 1px #5b698d;
-}
-
-.news .title {
-    margin-top: 35px;
-    text-align: center;
-    font-family: YuGothic, serif;
-    font-size: 40px;
-}
 
 #video {
     background: #ffffff88;
 }
 
-.musics, .movies {
+.news, .musics, .movies, .gallery{
     margin-top: 15px;
     border-top: dashed 1px #5b698d;
 }
 
-.musics .title, .movies .title {
+.news .title, .musics .title, .movies .title, .gallery .title{
     margin-top: 35px;
     text-align: center;
     font-family: YuGothic, serif;
@@ -199,6 +188,15 @@ li {
     margin-left: 11%;
     width: 40%;
     height: 380px;
+}
+
+.gallery_pane{
+    width: 80%;
+    height: 450px;
+    background: #ffffff3f;
+    margin: 50px 10% 50px 10%;
+    padding: 10px 3% 10px 3%;
+    border-radius: 4px;
 }
 
 #bi {
@@ -302,7 +300,14 @@ li {
 #top {
     z-index: 10;
     left: 33vw;
-    top: 20vh;
+    top: 30vh;
+}
+
+#end{
+    z-index: 10;
+    left: 33vw;
+    top: calc(130% + 3000px);
+    padding-bottom: 27%;
 }
 
 .top img {

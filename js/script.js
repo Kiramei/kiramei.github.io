@@ -76,6 +76,7 @@ function dataPreset() {
     $('.music_controller .title').text('Please choose one listed to play');
     $('.musics .title').text('Music');
     $('.movies .title').text('Movie');
+    $('.gallery .title').text('Galley');
 }
 
 function modeCheck() {
@@ -258,6 +259,12 @@ function menuSet() {
             },
             600);
     });
+    $('#n4').on("click", function () {
+        $(".scrollPane").stop().animate({
+                scrollTop: height + 2067
+            },
+            600);
+    });
 }
 
 function sizeSet() {
@@ -300,6 +307,6 @@ function lastSet() {
     h.append("<style>.top_logo{-webkit-transition: all 0.1s;-moz-transition: all 0.1s;-o-transition: all 0.1s;transition: all 0.1s;}</style>");
     if (!isMobile) {
         $('#backer').parallax();
-        $('#top').parallax();
+        $('#top, #end').parallax();
     }
 }
