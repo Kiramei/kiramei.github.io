@@ -90,6 +90,7 @@ function jsonParse() {
             for (let i = 0; i < musics.length; i++) {
                 $('.list').append('<div class="mus"><div class="title">' + musics[i].name + '</div><a><div class="listen" index=' + i + '> Play</div></a><a><div class="down">Download</div></a></div>');
                 addPlay();
+                addMovie();
             }
         }
         addPause();
@@ -101,6 +102,8 @@ function jsonParse() {
 function addPlay() {
     $('.listen').on("click", function (e) {
         const i = $(e.target).attr('index');
+        $('.listen').css('background','#20A2CCAA')
+        $(e.target).css('background','#6E696D');
         $('.music_controller .title').text(musics[i].name);
         if (typeof (audio) !== "undefined")
             audio.pause();
@@ -117,6 +120,15 @@ function addPlay() {
             $('.timeline').children().css({width: (audio.currentTime / audio.duration).toFixed(4) * 100 + "%"});
         }, 100);
         flag = 1;
+    });
+}
+
+function addMovie(){
+    $('.movie-unit').on('click',function (e) {
+        const i=$(e.target).attr('index');
+        $('.movie-unit').css('color',"#3b3c3c");
+        $(e.target).css('color','#20A2CCAA');
+
     });
 }
 
