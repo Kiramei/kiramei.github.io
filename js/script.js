@@ -25,6 +25,7 @@ jQuery(function () {
 
 let musics;
 let news;
+let movie;
 let flag = 0;
 let audio;
 let mode;
@@ -46,18 +47,30 @@ function dataPreset() {
     }
     $('.hint').text('Effect:');
     $('.news .title').text('News');
-    const url2 = "../json/news_list.json";
-    const request2 = new XMLHttpRequest();
-    request2.open("get", url2);
-    request2.send(null);
-    request2.onload = function () {
-        if (request2.status === 200) {
-            news = JSON.parse(request2.responseText);
+    const url1 = "../json/news_list.json";
+    const request1 = new XMLHttpRequest();
+    request1.open("get", url1);
+    request1.send(null);
+    request1.onload = function () {
+        if (request1.status === 200) {
+            news = JSON.parse(request1.responseText);
             for (let i = 0; i < news.length; i++) {
                 $('.news_pane').append('<div class="news_content"><div class="title">' + news[i].title + '</div><div class="content">' + news[i].content + '</div><div class="date">' + news[i].date1 + "</div></div>");
                 $('.news_nav').append('<a><div class="news_block">' + news[i].date2 + '</div></a>');
             }
             setSlick();
+        }
+    }
+    const url2 = "../json/movie_list.json";
+    const request2 = new XMLHttpRequest();
+    request2.open("get", url2);
+    request2.send(null);
+    request2.onload = function () {
+        if (request2.status === 200) {
+            movie = JSON.parse(request2.responseText);
+            for (let i = 0; i < movie.length; i++) {
+                $('.movie-lists').append('<div class="movie-unit" index="' + i + '">' + movie[i].name + '</div>');
+            }
         }
     }
     $('.music_controller .title').text('Please choose one listed to play');
@@ -88,11 +101,11 @@ function jsonParse() {
         if (request.status === 200) {
             musics = JSON.parse(request.responseText);
             for (let i = 0; i < musics.length; i++) {
-                $('.list').append('<div class="mus"><div class="title">' + musics[i].name + '</div><a><div class="listen" index=' + i + '> Play</div></a><a><div class="down">Download</div></a></div>');
-                addPlay();
-                addMovie();
+                $('.list').append('<div class="mus"><div class="title">' + musics[i].name + '</div><a><div class="listen" index=' + i + '> Play</div></a><a href="' + musics[i].url + '" download><div class="down">Download</div></a></div>');
             }
         }
+        addMovie();
+        addPlay();
         addPause();
         addMouse();
     }
@@ -102,8 +115,8 @@ function jsonParse() {
 function addPlay() {
     $('.listen').on("click", function (e) {
         const i = $(e.target).attr('index');
-        $('.listen').css('background','#20A2CCAA')
-        $(e.target).css('background','#6E696D');
+        $('.listen').css('background', '#20A2CCAA');
+        $(e.target).css('background', '#6E696D');
         $('.music_controller .title').text(musics[i].name);
         if (typeof (audio) !== "undefined")
             audio.pause();
@@ -123,12 +136,12 @@ function addPlay() {
     });
 }
 
-function addMovie(){
-    $('.movie-unit').on('click',function (e) {
-        const i=$(e.target).attr('index');
-        $('.movie-unit').css('color',"#3b3c3c");
-        $(e.target).css('color','#20A2CCAA');
-
+function addMovie() {
+    $('.movie-unit').on('click', function (e) {
+        const i = $(e.target).attr('index');
+        $('.movie-unit').removeAttr('style');
+        $(e.target).css('color', '#20A2CCAA');
+        $('#video').attr('src', movie[i].url);
     });
 }
 
@@ -164,7 +177,7 @@ function addMouse() {
             stalker.css("display", "block");
             hovFlag || (stalker.css("transform", "translate(" + e.clientX + "px, " + e.clientY + "px)"));
         });
-    let linkElem = document.querySelectorAll("a,.rights"), _i = 0;
+    let linkElem = document.querySelectorAll("a,.rights,.movie-unit"), _i = 0;
     for (; _i < linkElem.length; _i++) linkElem[_i].addEventListener("mouseover",
         function () {
             (hovFlag = !1),
