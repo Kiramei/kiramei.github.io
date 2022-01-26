@@ -89,7 +89,38 @@ function modeCheck() {
     m.css('background', mode !== 0 ? '#20A2CCAA' : '#DB5B70AA');
     m.text(mode === 0 ? 'off' : 'on');
     if (mode !== 1) {
-        $('#backer').html(' <div class="layer" data-depth="0.3"> <img id="t" src="img/background/all.png" alt=""/></div>');
+        $('#backer').html(' <div class="layer" data-depth="0.3"> <img id="t" src="img/background/all.webp" alt=""/></div>');
+    }else{
+        $('#backer').html(' <div class="layer" data-depth="0.2">\n' +
+            '        <img id="bi" src="img/background/back_1.webp" alt=""/>\n' +
+            '    </div>\n' +
+            '    <div class="layer" data-depth="0.0">\n' +
+            '        <img id="t" src="img/background/tree4.webp" alt=""/>\n' +
+            '    </div>\n' +
+            '    <div class="layer" data-depth="0.0">\n' +
+            '        <img id="t" src="img/background/tree7.webp" alt=""/>\n' +
+            '    </div>\n' +
+            '    <div class="layer" data-depth="0.2">\n' +
+            '        <img id="t" src="img/background/tree6.webp" alt=""/>\n' +
+            '    </div>\n' +
+            '    <div class="layer" data-depth="0.3">\n' +
+            '        <img id="t" src="img/background/tree5.webp" alt=""/>\n' +
+            '    </div>\n' +
+            '    <div class="layer" data-depth="0.0">\n' +
+            '        <img id="t" src="img/background/tree8.webp" alt=""/>\n' +
+            '    </div>\n' +
+            '    <div class="layer" data-depth="0.1">\n' +
+            '        <img id="t" src="img/background/tree3.webp" alt=""/>\n' +
+            '    </div>\n' +
+            '    <div class="layer" data-depth="0.2">\n' +
+            '        <img id="t" src="img/background/tree2.webp" alt=""/>\n' +
+            '    </div>\n' +
+            '    <div class="layer" data-depth="0.4">\n' +
+            '        <img id="t" src="img/background/tree1.webp" alt=""/>\n' +
+            '    </div>\n' +
+            '    <div class="layer" data-depth="0.3">\n' +
+            '        <img id="bg" src="img/background/ground.webp" alt=""/>\n' +
+            '    </div>');
     }
 }
 
@@ -136,7 +167,6 @@ function addPlay() {
         flag = 1;
     });
 }
-
 function addMovie() {
     $('.movie-unit').on('click', function (e) {
         const i = $(e.target).attr('index');
@@ -294,10 +324,10 @@ function sizeSet() {
 function setSwitch() {
     $('.mode').on('click', function () {
         Cookies.set('mode', mode = (mode === 0 ? 1 : 0));
-        console.log(mode)
         let m = $('.mode');
         m.css('background', mode !== 0 ? '#20A2CCAA' : '#DB5B70AA');
         m.text(mode === 0 ? 'off' : 'on');
+        location.reload();
     });
 }
 
