@@ -139,7 +139,7 @@ function jsonParse() {
         addMovie();
         addPlay();
         addPause();
-        //addMouse();
+        addMouse();
     }
 }
 
