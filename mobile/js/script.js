@@ -55,7 +55,7 @@ var a=0;
 		$(this).addClass('hov');
 	});
 
-	jQuery(function () {
+	//jQuery(function () {
 		var flag_1=-1;
 		$('.music-content').click(function(){
 			$('.hov1').removeClass('hov1');
@@ -89,7 +89,7 @@ var a=0;
 			i=$(this).attr('index');
 			$('#video').attr('src', movie[i].url);
 		});
-	});
+	//});
 	
 	
 	var mode='.cover';
