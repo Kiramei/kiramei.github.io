@@ -173,6 +173,9 @@ li {
     border-bottom: dashed 1px;
     transition: 0.3s ease;
 }
+.movie-unit:last-child{
+	border-bottom: none;
+}
 
 .movie-unit:hover {
     background: #db5b70aa;
@@ -432,6 +435,9 @@ a:hover {
     padding-bottom: 20px;
     width: 100%;
     border-bottom: dashed 1px;
+}
+.mus:last-child{
+	border-bottom: none;
 }
 
 .listen {
