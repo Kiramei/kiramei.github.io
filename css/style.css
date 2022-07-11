@@ -230,14 +230,12 @@ li {
     position: fixed;
     width: 32px;
     height: 32px;
-    background: url('img/cursor/normal.png');
-    border-radius: 50%;
-    transition-timing-function: ease-out;
+    background: url('../img/cursor/normal.png');
     z-index: 10000;
 }
 
 .cursor.hov {
-	background: url('img/cursor/pointer.png');
+	background: url('../img/cursor/pointer.png');
 }
 
 #loader {
