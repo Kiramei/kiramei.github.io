@@ -1,141 +1,177 @@
 <!DOCTYPE html>
 <html lang="jp" dir="ltr">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="author" content="&copy;Kiramei"/>
-    <meta name="keywords" content="Kiramei,kiramei,キラメイ,きらめい"/>
-    <meta name="description" content="This is Kiramei's official site. Activities are posted here">
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1.0,maximum-scale=0.5,minimum-scale=2.0,user-scalable=no"/>
-    <meta name="robots" content="index,follow"/>
-    <title>Kiramei Official Site</title>
-    <link rel="icon" type="image/x-icon" href="fav.ico"/>
-    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="&copy;Kiramei" />
+		<meta name="keywords" content="Kiramei,kiramei,キラメイ,きらめい" />
+		<meta name="description" content="This is Kiramei's official site. Activities are posted here">
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1.0,maximum-scale=0.5,minimum-scale=2.0,user-scalable=no" />
+		<meta name="robots" content="index,follow" />
+		<title>Kiramei Official Site</title>
+		<link rel="icon" type="image/x-icon" href="fav.ico" />
+		<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" type="text/css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
 
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/js-cookie/latest/js.cookie.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/js-cookie/latest/js.cookie.min.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
 
-    <script type="text/javascript" src="js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-	
-	<script type="text/javascript">
-		function is_mobile() {
-		    var useragents = [
-		        'iPhone',       
-		        'iPod',         
-		        'Android',      
-		    ];
-		    var pattern = new RegExp(useragents.join('|'), 'i');
-		    return pattern.test(navigator.userAgent);
-		}
-		is_mobile() ? window.location.href = "mobile/index.html" : null;
-	</script>
-</head>
-<body>
-<div class="cursor">
-</div>
-<div id="loader">
-    <img src="img/logo.png" draggable="false" alt=""/>
-</div>
-<div id="fade">
-</div>
-<section class="wt">
-    <div class="pach">
-        <div class="rag">
-            <a href="index.html">
-                <img src="img/top.png" alt=""/></a>
-        </div>
-        <div class="fi">
-        </div>
-        <div class="effect">
+		<script type="text/javascript" src="js/jquery.parallax.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+
+		<script type="text/javascript">
+			function is_mobile() {
+				var useragents = [
+					'iPhone',
+					'iPod',
+					'Android',
+				];
+				var pattern = new RegExp(useragents.join('|'), 'i');
+				return pattern.test(navigator.userAgent);
+			}
+			is_mobile() ? window.location.href = "mobile/index.html" : null;
+		</script>
+	</head>
+	<body>
+		<div class="cursor">
+		</div>
+		<div id="loader">
+			<img src="img/logo.png" draggable="false" alt="" />
+		</div>
+		<div id="fade">
+		</div>
+		<section class="wt">
+			<div class="pach">
+				<div class="rag">
+					<a href="index.html">
+						<img src="img/top.png" alt="" /></a>
+				</div>
+				<div class="fi">
+				</div>
+				<!--  <div class="effect">
             <div class="hint"></div>
             <a>
                 <div class="mode">
                 </div>
             </a>
-        </div>
-    </div>
-</section>
-<div class="rights"></div>
-<div class="scrollPane">
-    <div class="scrollbar"></div>
-    <div class="top">
-        <div id="top">
-            <div class="layer" data-depth="0.5">
-                <img src="img/top.png" alt=""/>
-            </div>
-        </div>
-        <div class="d">
-            <div class="form">
-            </div>
-            <div class="news">
-                <div class="title">
-                </div>
-            </div>
-            <div class="news_pane"></div>
-            <div class="news_nav"></div>
-            <div class="musics">
-                <div class="title">
-                </div>
-            </div>
-            <div class="music_pane">
-                <div class="music_list">
-                    <div class="list">
-                    </div>
-                </div>
-                <div class="music_controller">
-                    <div class="title">
-                    </div>
-                    <div class="control">
-                        <div class="timeline">
-                            <span class="progress"></span>
-                        </div>
-                        <div class="controller">
-                            <a>
-                                <div class="pause">
-                                    <svg x="1620388647690" fill="#0000009f" class="icon" viewBox="0 0 1024 1024"
-                                         xmlns="http://www.w3.org/2000/svg" p-id="1637" width="22" height="22">
-                                        <path d="M810.666667 512c0 14.933333-8.533333 27.733333-19.2 34.133333l0 0L273.066667 846.933333l0 0c-6.4 4.266667-12.8 6.4-19.2 6.4-21.333333 0-40.533333-17.066667-40.533333-40.533333L213.333333 211.2c0-21.333333 17.066667-40.533333 40.533333-40.533333 6.4 0 14.933333 2.133333 19.2 6.4l0 0 518.4 300.8 0 0C802.133333 484.266667 810.666667 497.066667 810.666667 512z"
-                                              p-id="1638"></path>
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="movies">
-                <div class="title">
-                </div>
-            </div>
-            <div class="movies_pane">
-                <div class="movie-lists">
-                </div>
-                <div class="movie-display">
-                    <iframe id="video" width="120%" height="380px" scrolling="no" border="0" frameborder="no"
-                            framespacing="0" allowfullscreen="allowfullscreen"></iframe>
-                </div>
-            </div>
-            <div class="gallery">
-                <div class="title">
-                </div>
-            </div>
-            <div class="gallery_pane">
-            </div>
-        </div>
-        <div id="end">
-            <div class="layer" data-depth="0.5">
-                <img src="img/top.png" alt=""/>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="backer"  class="s" data-isscale="true">
-</div>
-</body>
+        </div> -->
+				<div class="settings">
+					<svg t="1656759118430" class="icon" viewBox="0 0 1024 1024" version="1.1"
+						xmlns="http://www.w3.org/2000/svg" p-id="2256" width="30" height="50">
+						<path
+							d="M437.333333 224C437.333333 183.466667 471.466667 149.333333 512 149.333333s74.666667 34.133333 74.666667 74.666667S552.533333 298.666667 512 298.666667s-74.666667-34.133333-74.666667-74.666667zM439.466667 512c0-40.533333 34.133333-74.666667 74.666666-74.666667s74.666667 34.133333 74.666667 74.666667-34.133333 74.666667-74.666667 74.666667-74.666667-34.133333-74.666666-74.666667zM437.333333 800c0-40.533333 34.133333-74.666667 74.666667-74.666667s74.666667 34.133333 74.666667 74.666667S552.533333 874.666667 512 874.666667s-74.666667-34.133333-74.666667-74.666667z"
+							fill="#6c6666" p-id="2257"></path>
+					</svg>
+					<ul class="setting-menu">
+						<li>
+							<ul class="effect">
+								<li class="-mode">Effect:</li>
+								<li class="mode"></li>
+							</ul>
+						</li>
+						<li class="link">
+							<a href="https://music.163.com/#/artist?id=34227281">
+								<div class="text">Cloud Music ページへ</div>
+							</a>
+						</li>
+						<li class="link" id="bili">
+							<a href="https://space.bilibili.com/43914903">
+								<div class="text">Bilibili ページへ</div>
+							</a>
+						</li>
+						<li class="link" id="git">
+							<a href="https://github.com/Kiramei">
+								<div class="text">Github ページへ</div>
+							</a>
+						</li>
+						<li class="link" id="close">
+							<div class="text">× Close</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<div class="rights"></div>
+		<div class="scrollPane">
+			<div class="scrollbar"></div>
+			<div class="top">
+				<div id="top">
+					<div class="layer" data-depth="0.5">
+						<img src="img/top.png" alt="" />
+					</div>
+				</div>
+				<div class="d">
+					<div class="form">
+					</div>
+					<div class="news">
+						<div class="title">
+						</div>
+					</div>
+					<div class="news_pane"></div>
+					<div class="news_nav"></div>
+					<div class="musics">
+						<div class="title">
+						</div>
+					</div>
+					<div class="music_pane">
+						<div class="music_list">
+							<div class="list">
+							</div>
+						</div>
+						<div class="music_controller">
+							<div class="title">
+							</div>
+							<div class="control">
+								<div class="timeline">
+									<span class="progress"></span>
+								</div>
+								<div class="controller">
+									<a>
+										<div class="pause">
+											<svg x="1620388647690" fill="#0000009f" class="icon" viewBox="0 0 1024 1024"
+												xmlns="http://www.w3.org/2000/svg" p-id="1637" width="22" height="22">
+												<path
+													d="M810.666667 512c0 14.933333-8.533333 27.733333-19.2 34.133333l0 0L273.066667 846.933333l0 0c-6.4 4.266667-12.8 6.4-19.2 6.4-21.333333 0-40.533333-17.066667-40.533333-40.533333L213.333333 211.2c0-21.333333 17.066667-40.533333 40.533333-40.533333 6.4 0 14.933333 2.133333 19.2 6.4l0 0 518.4 300.8 0 0C802.133333 484.266667 810.666667 497.066667 810.666667 512z"
+													p-id="1638"></path>
+											</svg>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="movies">
+						<div class="title">
+						</div>
+					</div>
+					<div class="movies_pane">
+						<div class="movie-lists">
+						</div>
+						<div class="movie-display">
+							<iframe id="video" width="120%" height="380px" scrolling="no" border="0" frameborder="no"
+								framespacing="0" allowfullscreen="allowfullscreen"></iframe>
+						</div>
+					</div>
+					<div class="gallery">
+						<div class="title">
+						</div>
+					</div>
+					<div class="gallery_pane">
+					</div>
+				</div>
+				<div id="end">
+					<div class="layer" data-depth="0.5">
+						<img src="img/top.png" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="backer" class="s" data-isscale="true">
+		</div>
+	</body>
 </html>
