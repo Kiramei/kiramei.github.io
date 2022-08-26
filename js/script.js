@@ -86,7 +86,7 @@ function dataPreset() {
 }
 
 function modeCheck() {
-	mode = parseInt(Cookies.get('mode'));
+	/*mode = parseInt(Cookies.get('mode'));
 	if (isNaN(mode)) {
 		Cookies.set('mode', 0);
 		mode = 0
@@ -94,10 +94,10 @@ function modeCheck() {
 	let m = $('.mode');
 	m.css('background', mode !== 0 ? '#20A2CCAA' : '#DB5B70AA');
 	m.text(mode === 0 ? 'off' : 'on');
-	if (mode !== 1) {
+	if (mode !== 1) {*/
 		$('#backer').html(
-			' <div class="layer" data-depth="0.3"> <img id="t" src="img/background/all.webp" alt=""/></div>');
-	} else {
+			' <div class="layer"> <img id="t" src="img/background/bk.webp" alt=""/></div>');
+	/*} else {
 		$('#backer').html(' <div class="layer" data-depth="0.2">\n' +
 			'        <img id="bi" src="img/background/back_1.webp" alt=""/>\n' +
 			'    </div>\n' +
@@ -128,7 +128,7 @@ function modeCheck() {
 			'    <div class="layer" data-depth="0.3">\n' +
 			'        <img id="bg" src="img/background/ground.webp" alt=""/>\n' +
 			'    </div>');
-	}
+	}*/
 }
 
 function jsonParse() {
@@ -262,6 +262,7 @@ function setBackgroundSize() {
 		m = $('#bi,#bg,#t');
 		m.removeAttr("style");
 		m.css('height', height);
+		m.css('margin-left',-(height*16/9)/2+width/2);
 	} else {
 		m = $('#bi,#bg,#t');
 		m.removeAttr("style");
@@ -372,8 +373,4 @@ function lastSet() {
 	h.append(
 		"<style>.top_logo{-webkit-transition: all 0.1s;-moz-transition: all 0.1s;-o-transition: all 0.1s;transition: all 0.1s;}</style>"
 	);
-	if (!isMobile) {
-		$('#backer').parallax();
-		$('#top, #end').parallax();
-	}
 }

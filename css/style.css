@@ -291,12 +291,14 @@ li {
 }
 
 #top {
+	position: relative;
     z-index: 10;
     left: 33vw;
     top: 30vh;
 }
 
 #end{
+	position: relative;
     z-index: 10;
     left: 33vw;
     top: calc(130% + 3000px);
@@ -311,7 +313,7 @@ li {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: calc( 100% - 7px );
     height: 80px;
     background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
     backdrop-filter: blur(4px);
@@ -374,7 +376,7 @@ li {
 }
 
 .effect {
-	width: 200px;
+	width: 160px;
 	height: 40px;
     border-bottom: dashed 1px #3c3737;
 }
@@ -383,18 +385,18 @@ li {
 	position: absolute;
 	width: 200px;
 	height: 40px;
-	margin-top: 40px;
+	margin-top: 0px;
 	border-bottom: dashed 1px #3c3737;
 	
 }
 #bili{
-	margin-top: 80px;
+	margin-top: 40px;
 }
 #git{
-	margin-top: 120px;
+	margin-top: 80px;
 }
 #close{
-	margin-top: 160px;
+	margin-top: 120px;
 	border-bottom: none;
 }
 .text{
@@ -410,10 +412,10 @@ li {
 	display: none;
 	position: absolute;
 	top: 64px;
-	right: 7px;
-	background: #dadadabe;
+	right: 0px;
+	background: #f6f6f6be;
 	width: 200px;
-	height: 200px;
+	height: 160px;
 }
 
 a:hover {
@@ -428,9 +430,9 @@ a:hover {
 }
 
 .rights {
-    position: fixed;
-    margin-left: 90%;
-    margin-top: 40%;
+    position: absolute;
+    bottom: 50px;
+	right: 50px;
     width: 60px;
     height: 60px;
     background: rgba(0, 0, 0, 0.5);
@@ -622,9 +624,9 @@ a:hover {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	width: 100%;
+	width: calc( 100% - 20px);
 	height: 30px;
-	background: white;
-	text-align: center;
+	text-align: right;
 	z-index: 100000;
+	line-height: 30px;
 }
