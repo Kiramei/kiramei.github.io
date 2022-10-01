@@ -10,33 +10,16 @@
 		<meta name="robots" content="index,follow" />
 		<title>Kiramei Official Site</title>
 		<link rel="icon" type="image/x-icon" href="fav.ico" />
-		<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" type="text/css"
-			href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
-		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
-		<script src="https://cdn.bootcdn.net/ajax/libs/js-cookie/latest/js.cookie.min.js"></script>
+		<link href="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
 		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.min.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.39/vue.global.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
 
 		<script type="text/javascript" src="js/script.js"></script>
-
-		<script type="text/javascript">
-			function is_mobile() {
-				var useragents = [
-					'iPhone',
-					'iPod',
-					'Android',
-				];
-				var pattern = new RegExp(useragents.join('|'), 'i');
-				return pattern.test(navigator.userAgent);
-			}
-			is_mobile() ? window.location.href = "mobile/index.html" : null;
-		</script>
 	</head>
 	<body>
-		<div class="cursor">
-		</div>
 		<div id="loader">
 			<img src="img/logo.png" draggable="false" alt="" />
 		</div>
@@ -45,32 +28,20 @@
 		<section class="wt">
 			<div class="pach">
 				<div class="rag">
-					<a href="index.html">
+					<a href="javascript:document.querySelector('#sp').scrollTo(0,0);">
 						<img src="img/top.png" alt="" /></a>
 				</div>
-				<div class="fi">
+				<div class="fi" id="topTitle">
+					<title-box @click="select" v-if="isShow" v-for="item in titles" :title="item"></title-box>
 				</div>
-				<!--  <div class="effect">
-            <div class="hint"></div>
-            <a>
-                <div class="mode">
-                </div>
-            </a>
-        </div> -->
-				<div class="settings">
-					<svg t="1656759118430" class="icon" viewBox="0 0 1024 1024" version="1.1"
+				<div class="settings" id="sm">
+					<svg @click="change" t="1656759118430" class="icon" viewBox="0 0 1024 1024" version="1.1"
 						xmlns="http://www.w3.org/2000/svg" p-id="2256" width="30" height="50">
 						<path
 							d="M437.333333 224C437.333333 183.466667 471.466667 149.333333 512 149.333333s74.666667 34.133333 74.666667 74.666667S552.533333 298.666667 512 298.666667s-74.666667-34.133333-74.666667-74.666667zM439.466667 512c0-40.533333 34.133333-74.666667 74.666666-74.666667s74.666667 34.133333 74.666667 74.666667-34.133333 74.666667-74.666667 74.666667-74.666667-34.133333-74.666666-74.666667zM437.333333 800c0-40.533333 34.133333-74.666667 74.666667-74.666667s74.666667 34.133333 74.666667 74.666667S552.533333 874.666667 512 874.666667s-74.666667-34.133333-74.666667-74.666667z"
 							fill="#6c6666" p-id="2257"></path>
 					</svg>
-					<ul class="setting-menu">
-<!-- 						<li>
-							<ul class="effect">
-								<li class="-mode">Effect:</li>
-								<li class="mode"></li>
-							</ul>
-						</li> -->
+					<ul class="setting-menu" v-show="flag">
 						<li class="link">
 							<a href="https://music.163.com/#/artist?id=34227281">
 								<div class="text">Cloud Music ページへ</div>
@@ -86,15 +57,15 @@
 								<div class="text">Github ページへ</div>
 							</a>
 						</li>
-						<li class="link" id="close">
+						<li class="link" id="close" @click="close">
 							<div class="text">× Close</div>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</section>
-		<div class="rights"></div>
-		<div class="scrollPane">
+		<!-- <div class="rights" id="toTop" @click="backTop()">↑</div> -->
+		<div class="scrollPane" id="sp" @scroll="scrollToTop">
 			<div class="scrollbar"></div>
 			<div class="top">
 				<div id="top">
@@ -104,72 +75,63 @@
 				</div>
 				<div class="d">
 					<div class="form">
+						Scroll To See More<br />|
 					</div>
 					<div class="news">
 						<div class="title">
+							News
 						</div>
 					</div>
-					<div class="news_pane"></div>
+					<div class="news_pane" id="newsP">
+						<news-box v-for="item in news" :new_="item"></news-box>
+					</div>
 					<div class="news_nav"></div>
 					<div class="musics">
 						<div class="title">
+							Music
 						</div>
 					</div>
 					<div class="music_pane">
 						<div class="music_list">
-							<div class="list">
+							<div class="list" id="msList">
+								<music-box v-for="item in musics" :music="item"></music-box>
 							</div>
 						</div>
 						<div class="music_controller">
-							<div class="title">
-							</div>
-							<div class="control">
-								<div class="timeline">
-									<span class="progress"></span>
-								</div>
-								<div class="controller">
-									<a>
-										<div class="pause">
-											<svg x="1620388647690" fill="#0000009f" class="icon" viewBox="0 0 1024 1024"
-												xmlns="http://www.w3.org/2000/svg" p-id="1637" width="22" height="22">
-												<path
-													d="M810.666667 512c0 14.933333-8.533333 27.733333-19.2 34.133333l0 0L273.066667 846.933333l0 0c-6.4 4.266667-12.8 6.4-19.2 6.4-21.333333 0-40.533333-17.066667-40.533333-40.533333L213.333333 211.2c0-21.333333 17.066667-40.533333 40.533333-40.533333 6.4 0 14.933333 2.133333 19.2 6.4l0 0 518.4 300.8 0 0C802.133333 484.266667 810.666667 497.066667 810.666667 512z"
-													p-id="1638"></path>
-											</svg>
-										</div>
-									</a>
-								</div>
-							</div>
+							<div id="aplayer"></div>
 						</div>
+
 					</div>
 					<div class="movies">
 						<div class="title">
+							Movie
 						</div>
 					</div>
-					<div class="movies_pane">
+					<div class="movies_pane" id="mvList">
 						<div class="movie-lists">
+							<movie-box v-for="item in movies" @click="select" :movie="item"></movie-box>
 						</div>
 						<div class="movie-display">
 							<iframe id="video" width="120%" height="380px" scrolling="no" border="0" frameborder="no"
-								framespacing="0" allowfullscreen="allowfullscreen"></iframe>
+								framespacing="0" allowfullscreen="allowfullscreen" :src="currentUrl"></iframe>
 						</div>
 					</div>
 					<div class="gallery">
 						<div class="title">
+							Galley
 						</div>
 					</div>
 					<div class="gallery_pane">
 					</div>
 				</div>
 				<div id="end">
-					<div class="layer" data-depth="0.0">
-						<img src="img/top.png" alt="" />
-					</div>
+					<img src="img/top.png" alt="" />
 				</div>
 			</div>
 		</div>
-		<div id="backer" class="s" >
+		<div id="backer" class="s">
+			<img id="t" src="img/background/bk.webp" alt="" />
 		</div>
-		<div class="beian"><a href="http://beian.miit.gov.cn/" target="_blank" >沪ICP备20005789号</a></div>
+		<div class="beian"><a href="http://beian.miit.gov.cn/" target="_blank">沪ICP备20005789号</a></div>
 	</body>
 </html>
