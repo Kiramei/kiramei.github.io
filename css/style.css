@@ -217,24 +217,6 @@ li {
 	border-radius: 4px;
 }
 
-#bi {
-	z-index: 0;
-	animation: bog 3s;
-	transform: scale(1.02);
-}
-
-#bg {
-	z-index: 2;
-	animation: bog 3s;
-	transform: scale(1.02);
-}
-
-#t {
-	z-index: 1;
-	animation: bog 3s;
-	transform: scale(1.02);
-}
-
 .hint {
 	font-size: 19px;
 	line-height: 50px;
@@ -628,16 +610,6 @@ a:hover {
 
 	100% {
 		opacity: 1
-	}
-}
-
-@-webkit-keyframes bog {
-	0% {
-		transform: scale(1.5)
-	}
-
-	100% {
-		transform: scale(1.02)
 	}
 }
 
