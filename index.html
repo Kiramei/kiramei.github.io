@@ -29,7 +29,7 @@
 			<div class="pach">
 				<div class="rag">
 					<a href="javascript:document.querySelector('#sp').scrollTo(0,0);">
-						<img src="img/top.png" alt="" /></a>
+						<img src="img/top_.png" alt="" /></a>
 				</div>
 				<div class="fi" id="topTitle">
 					<title-box @click="select" v-if="isShow" v-for="item in titles" :title="item"></title-box>
@@ -58,7 +58,7 @@
 							</a>
 						</li>
 						<li class="link" id="close" @click="close">
-							<div class="text">× Close</div>
+							<a class="text">× Close</a>
 						</li>
 					</ul>
 				</div>
@@ -68,9 +68,7 @@
 			<div class="scrollbar"></div>
 			<div class="top">
 				<div id="top">
-					<div class="layer" data-depth="0.0">
-						<img src="img/top.png" alt="" />
-					</div>
+						<img src="img/top_.png" alt="" />
 				</div>
 				<div class="d">
 					<div class="form">
@@ -97,7 +95,7 @@
 							</div>
 						</div>
 						<div class="music_controller">
-							<div id="aplayer"></div>
+							<div id="aplayer" style="background: rgba(30, 30, 30, 0.2);"></div>
 						</div>
 
 					</div>
@@ -124,7 +122,7 @@
 					</div>
 				</div>
 				<div id="end">
-					<img src="img/top.png" alt="" />
+					<img src="img/top_.png" alt="" />
 				</div>
 			</div>
 		</div>

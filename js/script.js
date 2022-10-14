@@ -11,7 +11,7 @@ for (let i = 0; i < mobileAgent.length; i++) {
 	}
 }
 
-window.onload=function() {
+window.onload = function() {
 	preset();
 	createTopTitle();
 	musicSetup();
@@ -182,7 +182,7 @@ function addPlay(data) {
 		container: document.getElementById('aplayer'),
 		mini: false,
 		autoplay: false,
-		theme: '#db5b70',
+		theme: '#3d3d3d',
 		loop: 'all',
 		order: 'list',
 		preload: 'auto',
@@ -197,12 +197,14 @@ function addPlay(data) {
 
 function lastSet() {
 	setTimeout(function() {
-		fadeOut(document.querySelector("#fade"),10);
-		fadeOut(document.querySelector("#loader"),5);
+		fadeOut(document.querySelector("#fade"), 10);
+		fadeOut(document.querySelector("#loader"), 5);
+		document.querySelector(".aplayer-list").style.marginTop = "25px";
 	}, 900);
+
 }
 
-function fadeOut(element,spd) {
+function fadeOut(element, spd) {
 	var speed = spd;
 	var num = 100;
 	var st = setInterval(function() {
