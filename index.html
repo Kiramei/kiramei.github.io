@@ -10,13 +10,14 @@
 		<meta name="robots" content="index,follow" />
 		<title>Kiramei Official Site</title>
 		<link rel="icon" type="image/x-icon" href="fav.ico" />
-		<link rel="stylesheet" href="css/style.css" />
 		<link href="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css" />
+
 		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.min.js"></script>
-		<script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.39/vue.global.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js"></script>
 		<script src="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
-
+		<script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
 		<script type="text/javascript" src="js/script.js"></script>
 	</head>
 	<body>
@@ -39,7 +40,7 @@
 						xmlns="http://www.w3.org/2000/svg" p-id="2256" width="30" height="50">
 						<path
 							d="M437.333333 224C437.333333 183.466667 471.466667 149.333333 512 149.333333s74.666667 34.133333 74.666667 74.666667S552.533333 298.666667 512 298.666667s-74.666667-34.133333-74.666667-74.666667zM439.466667 512c0-40.533333 34.133333-74.666667 74.666666-74.666667s74.666667 34.133333 74.666667 74.666667-34.133333 74.666667-74.666667 74.666667-74.666667-34.133333-74.666666-74.666667zM437.333333 800c0-40.533333 34.133333-74.666667 74.666667-74.666667s74.666667 34.133333 74.666667 74.666667S552.533333 874.666667 512 874.666667s-74.666667-34.133333-74.666667-74.666667z"
-							fill="#6c6666" p-id="2257"></path>
+							fill="#ffffff" p-id="2257"></path>
 					</svg>
 					<ul class="setting-menu" v-show="flag">
 						<li class="link">
@@ -68,7 +69,7 @@
 			<div class="scrollbar"></div>
 			<div class="top">
 				<div id="top">
-						<img src="img/top_.png" alt="" />
+					<img src="img/top_1.png" alt="" />
 				</div>
 				<div class="d">
 					<div class="form">
@@ -114,18 +115,34 @@
 						</div>
 					</div>
 					<div class="gallery">
-						<div class="title">
+						<div class="title" >
 							Galley
 						</div>
 					</div>
 					<div class="gallery_pane">
+						<div id="gal">
+							<ul >
+								<img-box @click='change(item.url)' v-for="item in imgs" :img="item"></img-box>
+							</ul>
+							<Teleport to="body">
+								<div id="showing"  v-if="open">
+									<div class="showing" @click="open = false">
+									</div>
+									<div class="imgshow" @click="open = false">
+										<img  :src="current" alt="">
+									</div>
+								</div>
+							</Teleport>
+						</div>
 					</div>
 				</div>
 				<div id="end">
-					<img src="img/top_.png" alt="" />
+					<img src="img/top_1.png" alt="" />
 				</div>
 			</div>
 		</div>
+
+
 		<div id="backer" class="s">
 			<img id="t" src="img/background/bk.webp" alt="" />
 		</div>

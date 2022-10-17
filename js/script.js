@@ -11,12 +11,14 @@ for (let i = 0; i < mobileAgent.length; i++) {
 	}
 }
 
+
 window.onload = function() {
 	preset();
 	createTopTitle();
 	musicSetup();
 	movieSetup();
 	newsSetup();
+	gallerySetup();
 	addOption();
 	lastSet();
 };
@@ -24,7 +26,8 @@ window.onload = function() {
 let musics;
 let news;
 let movies;
-
+let imgs;
+var show=false;
 /*
   functions below.
 */
@@ -158,6 +161,71 @@ function newsSetup() {
 		}).mount("#newsP");
 	});
 }
+let  oa;
+function gallerySetup() {
+	axios('json/img_list.json').then(response => {
+		imgs = response.data;
+		Vue.createApp({
+			data() {
+				return {
+					imgs: response.data,
+					open:false,
+					current:''
+				}
+			},methods:{
+				change(v){
+					this.current=v;
+					this.open = true;
+				}
+			},
+			components: {
+				'img-box': {
+					props: ['img'],
+					template: `<li ><img :src="img.url" alt=""></li>`
+				}
+			},
+			
+			mounted() {
+				var masonry = new Macy({
+					container: '#gal ul',
+					trueOrder: false,
+					waitForImages: true,
+					useOwnImageLoader: false,
+					debug: true,
+					margin: {
+						x: 20,
+						y: 20
+					},
+					columns: 4,
+					breakAt: {
+		 			1200: {
+		 				columns: 3,
+							margin: {
+								x: 23,
+								y: 2
+							}
+						},
+						940: {
+							columns: 2,
+							margin: {
+								y: 23
+							}
+						},
+						520: {
+							columns: 1,
+							margin: 3,
+						},
+					}
+				});
+
+			}
+		}).mount("#gal");
+
+	});
+
+
+
+}
 
 function addOption() {
 	Vue.createApp({
@@ -199,7 +267,7 @@ function lastSet() {
 	setTimeout(function() {
 		fadeOut(document.querySelector("#fade"), 10);
 		fadeOut(document.querySelector("#loader"), 5);
-		document.querySelector(".aplayer-list").style.marginTop = "25px";
+		document.querySelector('#gal ul').style.height = "400px";
 	}, 900);
 
 }

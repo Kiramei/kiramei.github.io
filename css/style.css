@@ -3,13 +3,18 @@ html {
 }
 
 * {
-/* 	cursor: none !important; */
+	/* 	cursor: none !important; */
 	text-decoration: none;
 	user-select: none;
 }
 
 a {
 	color: #ffeaea;
+}
+
+img {
+	-webkit-user-drag: none;
+	-moz-user-select: none;
 }
 
 body {
@@ -34,6 +39,23 @@ ul {
 li {
 	list-style: none;
 	float: left;
+}
+
+.imgshow {
+	cursor: pointer;
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	height: 80%;
+	width: 100%;
+	transform: translateX(50%) translateY(65%);
+}
+
+.imgshow img {
+	cursor: pointer;
+	transform: translateX(-50%) translateY(-50%);
+	height: 100%;
 }
 
 #backer {
@@ -152,10 +174,11 @@ li {
 	background: rgba(30, 30, 30, 0.2);
 	text-align: center;
 }
-.news_pane{
+
+.news_pane {
 	width: 80%;
 	height: 422px;
-	margin:80px 0% 80px 5%;
+	margin: 80px 0% 80px 5%;
 	margin-bottom: 129px;
 	border: #ffffff;
 	overflow: auto;
@@ -177,6 +200,7 @@ li {
 	float: left;
 	background: rgba(30, 30, 30, 0.2);
 }
+
 .movie-unit {
 	font-size: 35px;
 	line-height: 50px;
@@ -290,7 +314,6 @@ li {
 #top {
 	position: relative;
 	z-index: 10;
-	
 	left: 45vw;
 	top: 30vh;
 }
@@ -300,7 +323,7 @@ li {
 	z-index: 10;
 	left: 45vw;
 	top: calc(120% + 3000px);
-	padding-bottom: 27%;
+	padding-bottom: 20%;
 }
 
 .top img {
@@ -615,6 +638,35 @@ a:hover {
 	}
 }
 
+@-webkit-keyframes in {
+	0% {
+		transform: scale(1.3)
+	}
+
+	100% {
+		transform: scale(1)
+	}
+}
+
+@-moz-keyframes in {
+	0% {
+		transform: scale(1.3)
+	}
+
+	100% {
+		transform: scale(1)
+	}
+}
+
+@keyframes in {
+	0% {
+		transform: scale(1.3)
+	}
+
+	100% {
+		transform: scale(1)
+	}
+}
 
 .beian {
 	display: block;
@@ -628,6 +680,10 @@ a:hover {
 	line-height: 30px;
 }
 
+#backer {
+	animation: in 3s 0.8s;
+}
+
 .top_logo {
 	-webkit-transition: all 0.1s;
 	-moz-transition: all 0.1s;
@@ -639,10 +695,95 @@ a:hover {
 	display: none;
 }
 
+.settings svg,
+.movie-unit {
+	cursor: pointer;
+}
+
 #fade,
 #loader {
 	display: block;
 }
-.hover{
-	color:#a7a7a7aa;
+
+.hover {
+	color: #a7a7a7aa;
+}
+
+.gallery_ {
+	height: 90%;
+	overflow-y: scroll;
+
+}
+
+.showing {
+	width: 100vw;
+	height: 100vh;
+	background-color: #000;
+	position: absolute;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+#gal ul {
+	overflow: scroll;
+}
+
+#gal ul li img {
+	width: 100%;
+}
+
+#gal ul li {
+	transition: 0.1s ease;
+	cursor: pointer;
+	opacity: 0.6;
+}
+
+#gal ul li:hover {
+	opacity: 1;
+}
+
+.aplayer-list {
+	margin-top: 25px;
+}
+
+.aplayer .aplayer-list ol {
+	max-height: 70px;
+}
+
+.aplayer .aplayer-lrc:after {
+	height: 33%;
+	background: transparent;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff", endColorstr="#ccffffff", GradientType=0);
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-time {
+	color: #fff;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+	fill: #ffffff;
+}
+
+.aplayer .aplayer-list ol li:hover {
+	color: #000;
+	background: #efefef;
+}
+
+.aplayer .aplayer-list ol li.aplayer-list-light {
+	background: #e9e9e9;
+	color: #000;
+}
+
+.aplayer .aplayer-list ol li .aplayer-list-author {
+	color: #ffffff;
+	float: right;
+	cursor: pointer;
+}
+
+.aplayer .aplayer-info .aplayer-music .aplayer-author {
+	font-size: 12px;
+	color: #ffffff;
 }
