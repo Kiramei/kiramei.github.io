@@ -20,7 +20,6 @@ window.onload = function() {
 	movieSetup();
 	addOption();
 	musicSetup();
-
 	lastSet();
 };
 
@@ -28,7 +27,7 @@ let musics;
 let news;
 let movies;
 let imgs;
-var show=false;
+var show = false;
 /*
   functions below.
 */
@@ -162,7 +161,7 @@ function newsSetup() {
 		}).mount("#newsP");
 	});
 }
-let  oa;
+
 function gallerySetup() {
 	axios('json/img_list.json').then(response => {
 		imgs = response.data;
@@ -170,12 +169,13 @@ function gallerySetup() {
 			data() {
 				return {
 					imgs: response.data,
-					open:false,
-					current:''
+					open: false,
+					current: ''
 				}
-			},methods:{
-				change(v){
-					this.current=v;
+			},
+			methods: {
+				change(v) {
+					this.current = v;
 					this.open = true;
 				}
 			},
@@ -185,7 +185,7 @@ function gallerySetup() {
 					template: `<li ><img :src="img.url" alt=""></li>`
 				}
 			},
-			
+
 			mounted() {
 				var masonry = new Macy({
 					container: '#gal ul',
@@ -199,8 +199,8 @@ function gallerySetup() {
 					},
 					columns: 4,
 					breakAt: {
-		 			1200: {
-		 				columns: 3,
+						1200: {
+							columns: 3,
 							margin: {
 								x: 23,
 								y: 2

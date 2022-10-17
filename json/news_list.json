@@ -1,55 +1,50 @@
-[
-  {
-    "title": "音楽配信",
-    "content": "いろいろな歌を配信しました,ぜひお聞て下さい！",
-    "date1": "—————— 2022/9/6",
-    "date2": "2022/9/6"
-  },
-  {
-    "title": "アプリケーションリメイク",
-    "content": "｢Manga Surfer」Androidのリメイクバージョンです、<br/><a href=\"https://link.jscdn.cn/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBdGpqY2tQeDRTVW9tZ2ZlLTlEbmtKUEF1Q1dsP2U9RE5hNjFk.apk\">ここでクリックするとダウンロードしてください</a>",
-    "date1": "—————— 2021/6/29",
-    "date2": "2021/6/29"
-  },
-  {
-    "title": "新しいアプリケーション",
-    "content": "｢Manga Surfer」プロジェクトです、<br/><a href=\"https://github.com/Kiramei/MangaSurfer/releases/\">Androidはここでクリックするとダウンロードしてください</a><br/><a href=\"https://www.mediafire.com/file/1flhu6xaraexdgq/QuickDownloader_installer.exe/file\">Windowsはここでクリックするとダウンロードしてください</a>",
-    "date1": "—————— 2021/1/26",
-    "date2": "2021/1/26-2"
-  },
-  {
-    "title": "新しいプロジェクト",
-    "content": "｢Rush Spider」プロジェクトです、<a href=\"https://github.com/Kiramei/RushSpider\">ここでクリックすると見てください</a>",
-    "date1": "—————— 2021/1/26",
-    "date2": "2021/1/26-1"
-  },
-  {
-    "title": "新しいプロジェクト",
-    "content": "｢Video2Text」プロジェクトです、<a href=\"https://github.com/Kiramei/Video2Text\">ここでクリックすると見てください</a>",
-    "date1": "—————— 2020/2/13",
-    "date2": "2020/2/13"
-  },
-  {
-    "title": "音楽アップロード",
-    "content": "｢光は遠い」音楽ファイルです、<a href=\"https://kiramei.github.io/pages/source/toi.zip\">ここをクリックしてダウンロードしください</a>",
-    "date1": "—————— 2020/2/10",
-    "date2": "2020/2/10"
-  },
-  {
-    "title": "音楽プラットフォームの紹介",
-    "content": "僕は今は「Netease Cloud Music｣に音楽を作りているの、どうかよろしくたのむ！",
-    "date1": "—————— 2020/1/26",
-    "date2": "2020/1/26"
-  },
-  {
-    "title": "音楽アップロード",
-    "content": "｢星空を見上げ」音楽ファイルです、<a href=\"https://kiramei.github.io/pages/source/hoshi.zip\">ここをクリックしてダウンロードしください</a>",
-    "date1": "—————— 2020/1/24",
-    "date2": "2020/1/24-2"
-  },  {
-  "title": "音楽アップロード",
-  "content": "｢闇の世界で光を探す」音楽ファイルです、<a href=\"https://kiramei.github.io/pages/source/yami.zip\">ここをクリックしてダウンロードしください</a>",
-  "date1": "—————— 2020/1/24",
-  "date2": "2020/1/24-1"
-}
+[{
+		"title": "写真配信",
+		"content": "いろいろな写真を配信しました,ぜひお見て下さい！",
+		"date1": "—————— 2022/10/17"
+	},
+	{
+		"title": "音楽配信",
+		"content": "いろいろな歌を配信しました,ぜひお聞て下さい！",
+		"date1": "—————— 2022/9/6"
+	},
+	{
+		"title": "アプリケーションリメイク",
+		"content": "｢Manga Surfer」Androidのリメイクバージョンです、<br/><a href=\"https://link.jscdn.cn/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBdGpqY2tQeDRTVW9tZ2ZlLTlEbmtKUEF1Q1dsP2U9RE5hNjFk.apk\">ここでクリックするとダウンロードしてください</a>",
+		"date1": "—————— 2021/6/29"
+	},
+	{
+		"title": "新しいアプリケーション",
+		"content": "｢Manga Surfer」プロジェクトです、<br/><a href=\"https://github.com/Kiramei/MangaSurfer/releases/\">Androidはここでクリックするとダウンロードしてください</a><br/><a href=\"https://www.mediafire.com/file/1flhu6xaraexdgq/QuickDownloader_installer.exe/file\">Windowsはここでクリックするとダウンロードしてください</a>",
+		"date1": "—————— 2021/1/26"
+	},
+	{
+		"title": "新しいプロジェクト",
+		"content": "｢Rush Spider」プロジェクトです、<a href=\"https://github.com/Kiramei/RushSpider\">ここでクリックすると見てください</a>",
+		"date1": "—————— 2021/1/26"
+	},
+	{
+		"title": "新しいプロジェクト",
+		"content": "｢Video2Text」プロジェクトです、<a href=\"https://github.com/Kiramei/Video2Text\">ここでクリックすると見てください</a>",
+		"date1": "—————— 2020/2/13"
+	},
+	{
+		"title": "音楽アップロード",
+		"content": "｢光は遠い」音楽ファイルです、<a href=\"https://kiramei.github.io/pages/source/toi.zip\">ここをクリックしてダウンロードしください</a>",
+		"date1": "—————— 2020/2/10"
+	},
+	{
+		"title": "音楽プラットフォームの紹介",
+		"content": "僕は今は「Netease Cloud Music｣に音楽を作りているの、どうかよろしくたのむ！",
+		"date1": "—————— 2020/1/26"
+	},
+	{
+		"title": "音楽アップロード",
+		"content": "｢星空を見上げ」音楽ファイルです、<a href=\"https://kiramei.github.io/pages/source/hoshi.zip\">ここをクリックしてダウンロードしください</a>",
+		"date1": "—————— 2020/1/24"
+	}, {
+		"title": "音楽アップロード",
+		"content": "｢闇の世界で光を探す」音楽ファイルです、<a href=\"https://kiramei.github.io/pages/source/yami.zip\">ここをクリックしてダウンロードしください</a>",
+		"date1": "—————— 2020/1/24"
+	}
 ]
