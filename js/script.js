@@ -15,11 +15,12 @@ for (let i = 0; i < mobileAgent.length; i++) {
 window.onload = function() {
 	preset();
 	createTopTitle();
-	musicSetup();
-	movieSetup();
 	newsSetup();
 	gallerySetup();
+	movieSetup();
 	addOption();
+	musicSetup();
+
 	lastSet();
 };
 
