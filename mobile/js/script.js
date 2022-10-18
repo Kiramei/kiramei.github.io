@@ -88,13 +88,6 @@ $('.nav-content a ').click(function() {
 	$(this).addClass('hov');
 });
 
-//jQuery(function () {
-
-
-
-
-//});
-
 
 var mode = '.cover';
 $('#event').click(function() {

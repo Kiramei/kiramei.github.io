@@ -45,6 +45,13 @@ function preset() {
 
 function createTopTitle() {
 	Vue.createApp({
+		methods:{
+			toTop(){
+				document.querySelector('#sp').scrollTo(0,0);
+			}
+		}
+	}).mount('#toTop');
+	Vue.createApp({
 		data() {
 			return {
 				titles: [{

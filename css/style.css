@@ -351,11 +351,13 @@ li {
 .rag {
 	float: left;
 	margin-left: 2%;
+	cursor: pointer;
 }
 
 .rag img {
 	float: left;
 	width: 50px;
+	cursor: pointer;
 }
 
 .fi {
