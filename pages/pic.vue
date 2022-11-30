@@ -4,7 +4,11 @@
             <div class="box">
                 <div class="item" v-for="(item, index) in imgs">
                     <ElImage :preview-src-list="imgs" :src="item" :initial-index="index" class="img" hide-on-click-modal
-                        loading="lazy" />
+                        loading="lazy">
+                        <template #placeholder>
+                            <div class="image-slot">Loading<span class="dot">...</span></div>
+                        </template>
+                    </ElImage>
                 </div>
             </div>
         </ElScrollbar>
@@ -18,7 +22,7 @@ import { ElScrollbar, ElImage } from 'element-plus'
 const imgs = computed(() => {
     var a = [];
     for (var i = 1; i <= 47; i++)
-        a.push(`/_nuxt/assets/webp/bg%20(${i}).webp`)
+        a.push(`https://raw.githubusercontent.com/Kiramei/kiramei.github.io/main/assets/webp/bg%20(${i}).webp`)
     return a;
 })
 </script>
@@ -74,5 +78,41 @@ const imgs = computed(() => {
     border-radius: 5px;
     width: 100%;
     height: 100%;
+}
+
+.demo-image__placeholder .block {
+  padding: 30px 0;
+  text-align: center;
+  border-right: solid 1px var(--el-border-color);
+  display: inline-block;
+  width: 49%;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+.demo-image__placeholder .demonstration {
+  display: block;
+  color: var(--el-text-color-secondary);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.demo-image__placeholder .el-image {
+  padding: 0 5px;
+  max-width: 300px;
+  max-height: 200px;
+}
+
+.demo-image__placeholder.image-slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: var(--el-fill-color-light);
+  color: var(--el-text-color-secondary);
+  font-size: 14px;
+}
+.demo-image__placeholder .dot {
+  animation: dot 2s infinite steps(3, start);
+  overflow: hidden;
 }
 </style>
