@@ -2,6 +2,6 @@
   <Page />
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import Page from './pages/start.vue'
 </script>

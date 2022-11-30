@@ -18,11 +18,7 @@ export default defineNuxtConfig({
             {
                 hid: 'description',
                 name: 'description',
-                content: ''
-            },
-            {
-                name: 'format-detection',
-                content: 'telephone=no'
+                content: `This is Kiramei's official site. Activities are posted here`
             }
             ],
             link: [{
