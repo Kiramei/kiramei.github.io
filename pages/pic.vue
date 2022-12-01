@@ -22,7 +22,7 @@ import { ElScrollbar, ElImage } from 'element-plus'
 const imgs = computed(() => {
     var a = [];
     for (var i = 1; i <= 47; i++)
-        a.push(`https://raw.githubusercontents.com/Kiramei/kiramei.github.io/main/assets/webp/bg%20(${i}).webp`)
+        a.push(`https://cdn.kiramei.workers.dev/bg%20(${i}).webp`)
     return a;
 })
 </script>
