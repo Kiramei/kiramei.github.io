@@ -19,6 +19,9 @@ const loading = ref(true);
 onBeforeMount(() => {
   const lgr = useCookie('lang');
   langCode().value = Number.parseInt(lgr.value);
+})
+
+onMounted(() => {
   setTimeout(() => {
     loading.value = false
   }, 900);
