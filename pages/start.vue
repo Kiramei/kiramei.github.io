@@ -83,14 +83,12 @@ import {
   from "element-plus"
 import 'element-plus/dist/index.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
-// import zhCn from "element-plus/dist/locale/zh-cn.js";
 import { Tools, ArrowDown } from "@element-plus/icons-vue";
 import { useDark, useToggle } from '@vueuse/core'
 /**
  * import the vue
  */
 import { ref, computed } from "vue"
-//Vue.setVue.set(vm.items, indexOfItem, newValue)// vm.$setvm.$set(vm.items, indexOfItem, newValue)// Array.prototype.splicevm.items.splice(indexOfItem, 1, newValue)
 
 const isDark = useDark()
 
