@@ -93,12 +93,16 @@ import { ref, computed } from "vue"
 const isDark = useDark()
 
 const lg = langCode();
-const lgr = useCookie('lang');
+const lgr = useCookie<number>('lang');
 const toggleDark = computed(() => {
   return useToggle(isDark)
 })
 
 onMounted(() => {
+  if (lgr.value === null) {
+    lgr.value = 0
+  }
+  langCode().value = lgr.value
   if (!form.value.theme)
     toggleDark;
 })
@@ -132,7 +136,7 @@ watch(navi(), () => {
 
 const tstClk = (e: number) => {
   lg.value = e
-  lgr.value = lg.value.toString();
+  lgr.value = lg.value;
 }
 
 </script>

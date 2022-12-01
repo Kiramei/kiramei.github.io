@@ -4,10 +4,7 @@
 
 <script setup>
 import Page from './pages/start.vue'
-onMounted(() => {
-  const lgr = useCookie('lang');
-  langCode().value = Number.parseInt(lgr.value);
-})
+
 useHead({
   charset: 'utf-16',
   viewport: 'width=500, initial-scale=1',
