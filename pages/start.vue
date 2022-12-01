@@ -44,10 +44,10 @@
             :inactive-text="lang().value.light[lg]" @click="toggleDark()" />
         </ElFormItem>
         <ElFormItem :label="lang().value.lang_setting[lg]">
-          <el-select v-model="form.lang" @change="tstClk">
-            <el-option label="日本語" value="0" />
-            <el-option label="简体中文" value="1" />
-            <el-option label="English" value="2" />
+          <el-select v-model="langCode().value" @change="tstClk">
+            <el-option label="日本語" :value="0" />
+            <el-option label="简体中文" :value="1" />
+            <el-option label="English" :value="2" />
           </el-select>
         </ElFormItem>
       </ElForm>
@@ -95,7 +95,7 @@ import { ref, computed } from "vue"
 const isDark = useDark()
 
 const lg = langCode();
-
+const lgr = useCookie('lang');
 const toggleDark = computed(() => {
   return useToggle(isDark)
 })
@@ -113,8 +113,7 @@ const jump = (url: string) => {
 const showDrawer = ref(false)
 
 const form = ref({
-  theme: isDark.value,
-  lang: "0"
+  theme: isDark.value
 })
 
 const route = useRoute()
@@ -135,6 +134,7 @@ watch(navi(), () => {
 
 const tstClk = (e: number) => {
   lg.value = e
+  lgr.value = lg.value.toString();
 }
 
 </script>

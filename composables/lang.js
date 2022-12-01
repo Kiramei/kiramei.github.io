@@ -41,6 +41,10 @@ export const lang = () => useState('lang', () => (
             {
                 text: ["Github ページへ", '前往Github主页', 'To Github page'],
                 url: "https://github.com/Kiramei",
+            },
+            {
+                text: ["元のぺーじへ", '前往先前的主页', 'To former page'],
+                url: "https://kiramei.cn/former",
             }
         ],
         news_content: [{

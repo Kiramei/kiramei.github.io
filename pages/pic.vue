@@ -6,7 +6,14 @@
                     <ElImage :preview-src-list="imgs" :src="item" :initial-index="index" class="img" hide-on-click-modal
                         loading="lazy">
                         <template #placeholder>
-                            <div class="image-slot">Loading<span class="dot">...</span></div>
+                            <div class="ld-image-slot">Loading<span class="ld-dot">...</span></div>
+                        </template>
+                        <template #error>
+                            <div class="image-slot">
+                                <el-icon>
+                                    <Picture>error</Picture>
+                                </el-icon>
+                            </div>
                         </template>
                     </ElImage>
                 </div>
@@ -16,9 +23,9 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from 'vue'
-import { ElScrollbar, ElImage } from 'element-plus'
-
+import { computed } from 'vue'
+import { ElScrollbar, ElImage, ElIcon } from 'element-plus'
+import { Picture } from '@element-plus/icons-vue';
 const imgs = computed(() => {
     var a = [];
     for (var i = 1; i <= 47; i++)
@@ -69,6 +76,8 @@ const imgs = computed(() => {
     }
 }
 
+
+
 .item {
     cursor: pointer;
     margin-bottom: 20px;
@@ -80,39 +89,35 @@ const imgs = computed(() => {
     height: 100%;
 }
 
-.demo-image__placeholder .block {
-  padding: 30px 0;
-  text-align: center;
-  border-right: solid 1px var(--el-border-color);
-  display: inline-block;
-  width: 49%;
-  box-sizing: border-box;
-  vertical-align: top;
-}
-.demo-image__placeholder .demonstration {
-  display: block;
-  color: var(--el-text-color-secondary);
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-.demo-image__placeholder .el-image {
-  padding: 0 5px;
-  max-width: 300px;
-  max-height: 200px;
+.ld-image-slot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: var(--el-fill-color-light);
+    color: var(--el-text-color-secondary);
+    font-size: 14px;
 }
 
-.demo-image__placeholder.image-slot {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background: var(--el-fill-color-light);
-  color: var(--el-text-color-secondary);
-  font-size: 14px;
+.ld-dot {
+    animation: dot 2s infinite steps(3, start);
+    overflow: hidden;
 }
-.demo-image__placeholder .dot {
-  animation: dot 2s infinite steps(3, start);
-  overflow: hidden;
+
+.el-image {
+    min-height: 80px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.image-slot {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--el-fill-color-light);
+    color: var(--el-text-color-secondary);
 }
 </style>
