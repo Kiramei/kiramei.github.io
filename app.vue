@@ -1,5 +1,5 @@
 <template>
-  <!-- <Transition name="lg">
+  <Transition name="lg">
     <div v-if="loading" class="content-loader">
       <img src="./assets/logo.png" draggable="false" alt="" />
     </div>
@@ -7,27 +7,26 @@
   <Transition name="blk">
     <div v-if="loading" class="content-mask">
     </div>
-  </Transition> -->
+  </Transition>
   <Page />
 </template>
 
 <script setup>
 import Page from './pages/start.vue'
-import {ref} from 'vue'
+import { ref } from 'vue'
 const loading = ref(true);
 
 onBeforeMount(() => {
   const lgr = useCookie('lang');
   langCode().value = Number.parseInt(lgr.value);
 })
-/*
+
 onMounted(() => {
   setTimeout(() => {
     loading.value = false
   }, 900);
 })
 
-*/
 useHead({
   charset: 'utf-16',
   viewport: 'width=500, initial-scale=1',
@@ -131,7 +130,6 @@ img {
     opacity: 1
   }
 }
-/* 
 
 .blk-enter-active,
 .blk-leave-active {
@@ -152,5 +150,5 @@ img {
 .lg-enter-from,
 .lg-leave-to {
   opacity: 0;
-} */
+}
 </style>
