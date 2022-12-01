@@ -1,38 +1,26 @@
 <template>
-  <div class="content-loader"> <img src="./assets/logo.png" draggable="false" alt="" />
-  </div>
-  <div class="content-mask"></div>
+  <Transition name="lg">
+    <div v-if="loading" class="content-loader">
+      <img src="./assets/logo.png" draggable="false" alt="" />
+    </div>
+  </Transition>
+  <Transition name="blk">
+    <div v-if="loading" class="content-mask">
+    </div>
+  </Transition>
   <Page />
 </template>
 
 <script setup>
 import Page from './pages/start.vue'
 
+const loading = ref(true);
+
 onBeforeMount(() => {
   const lgr = useCookie('lang');
   langCode().value = Number.parseInt(lgr.value);
-  console.log(langCode().value)
-  setTimeout(function () {
-    var e1 = document.querySelector(".content-loader");
-    var e2 = document.querySelector(".content-mask");
-    var num1 = 100;
-    var st = setInterval(function () {
-      num1--;
-      e1.style.opacity = num1 / 100;
-      if (num1 <= 0) {
-        clearInterval(st);
-        e1.style.display = "none";
-      }
-    }, 10);
-    var num2 = 100;
-    var stt = setInterval(function () {
-      num2--;
-      e2.style.opacity = num2 / 100;
-      if (num2 <= 0) {
-        clearInterval(stt);
-        e2.style.display = "none";
-      }
-    }, 5);
+  setTimeout(() => {
+    loading.value = false
   }, 900);
 })
 useHead({
@@ -59,8 +47,7 @@ useHead({
     rel: 'icon',
     type: 'image/x-icon',
     href: 'https://raw.githubusercontent.com/Kiramei/kiramei.github.io/main/fav.ico'
-  }],
-  plugins: [{ src: 'plugins/loader.js', ssr: false }],
+  }]
 })
 
 </script>
@@ -76,11 +63,14 @@ img {
 
 
 .content-loader {
-  width: 20%;
+  width: 100%;
+  height: 100%;
+  top: -40px;
+  left: 0;
+  display: flex;
   position: fixed;
-  _position: absolute;
-  top: calc(45% - 28px);
-  left: calc(50% - 113px);
+  align-items: center;
+  justify-content: center;
   z-index: 999;
   -webkit-animation: blink 1.5s ease-in-out infinite alternate;
   -moz-animation: blink 1.5s ease-in-out infinite alternate;
@@ -88,7 +78,8 @@ img {
 }
 
 .content-loader img {
-  width: 225px;
+  width: 56px;
+  height: 56px;
 }
 
 .content-mask {
@@ -134,5 +125,27 @@ img {
   100% {
     opacity: 1
   }
+}
+
+
+.blk-enter-active,
+.blk-leave-active {
+  transition: opacity 1.5s ease;
+}
+
+.blk-enter-from,
+.blk-leave-to {
+  opacity: 0;
+}
+
+
+.lg-enter-active,
+.lg-leave-active {
+  transition: opacity 0.1s ease;
+}
+
+.lg-enter-from,
+.lg-leave-to {
+  opacity: 0;
 }
 </style>
