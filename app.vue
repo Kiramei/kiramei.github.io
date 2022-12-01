@@ -13,8 +13,8 @@
 
 <script setup>
 import Page from './pages/start.vue'
-/*
 import {ref} from 'vue'
+/*
 const loading = ref(true);
 */
 onBeforeMount(() => {
