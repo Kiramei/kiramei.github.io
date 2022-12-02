@@ -48,6 +48,17 @@ export const lang = () => useState('lang', () => (
             }
         ],
         news_content: [{
+            "title": ['新しいアプリ', '新的软件', 'New App'],
+            'content': [`<img src='https://kiramei.cn/former/webp/show.png' style="width: 100%;"/>｢Ascii Art」プロジェクトが終に完成いたしました、<br/>アプリはAscii動画の生成ができる、<br/>またこのあぷりはVideo2Text」の改正バージョンて、<br/>Windowsの环境が必要です、<br/>どうぞご覧で下さい。`,
+                `<img src='https://kiramei.cn/former/webp/show.png' style="width: 100%;"/>Ascii Art项目完成了，<br/>软件可以将视频转换为ascii序列，<br/>这个程序是Video2Text的改版，<br/>需要windows的运行环境，<br/>请前往项目页浏览一下吧。`,
+                `<img src='https://kiramei.cn/former/webp/show.png' style="width: 100%;"/>Video2Text has been finished.<br/>It can process videos to ascii ones.<br/>It's a new version of Video2Text.<br/>It's still only available on Windows.<br/>Please go to the project page to view it.`],
+            "date": '2022-11-19',
+            "hasBtn": true,
+            "btnUrl": "https://github.com/Kiramei/ASCII-Art",
+            "btnMode": 2,
+            "btnName": ['アプリページへ', '前往项目页', 'To the App page']
+        },
+        {
             "title": ["イラスト追加", '新增插画', 'New illustrations'],
             "content": [`いろいろなイラストを追加しました,ぜひお見て下さい！`,
                 `新增了一些插画，看一下吧`,
@@ -59,7 +70,7 @@ export const lang = () => useState('lang', () => (
             "btnName": ['イラストへ', '前往插画', 'To Gallery']
         },
         {
-            "title": ["音楽追加", '新增音乐','New music'],
+            "title": ["音楽追加", '新增音乐', 'New music'],
             "content": [`いろいろな歌を追加しました,ぜひお聞て下さい！`,
                 `新增了一些音乐，听一下吧`,
                 `I added some new music.<br/>You may go and listen to them.`],
