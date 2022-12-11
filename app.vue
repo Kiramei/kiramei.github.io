@@ -28,7 +28,7 @@ useHead({
   link: [{
     rel: 'icon',
     type: 'image/x-icon',
-    href: 'https://raw.githubusercontent.com/Kiramei/kiramei.github.io/main/fav.ico'
+    href: 'https://kiramei.cn/former/favicon.ico'
   }]
 })
 
