@@ -60,9 +60,9 @@ export const lang = () => useState('lang', () => (
         },
         {
             "title": ["イラスト追加", '新增插画', 'New illustrations'],
-            "content": [`いろいろなイラストを追加しました,ぜひお見て下さい！`,
-                `新增了一些插画，看一下吧`,
-                `I added some new illustrations.<br/>You may go and view them.`],
+            "content": [`<img src='https://kiramei.cn/former/webp/bg%20(31).webp' style="width: 100%;"/>いろいろなイラストを追加しました,ぜひお見て下さい！`,
+                `<img src='https://kiramei.cn/former/webp/bg%20(31).webp' style="width: 100%;"/>新增了一些插画，看一下吧`,
+                `<img src='https://kiramei.cn/former/webp/bg%20(31).webp' style="width: 100%;"/>I added some new illustrations.<br/>You may go and view them.`],
             "date": "2022-10-17",
             "hasBtn": true,
             "btnUrl": '/pic',
