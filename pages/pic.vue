@@ -32,6 +32,10 @@ const imgs = computed(() => {
         a.push(`https://kiramei.cn/former/webp/bg%20(${i}).webp`)
     return a;
 })
+
+onMounted(() => {
+  loadingView().value = false
+})
 </script>
 
 <style scoped>

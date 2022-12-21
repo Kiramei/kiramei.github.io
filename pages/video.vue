@@ -1,15 +1,17 @@
 <template>
-    <div class="box">
-        <div class="box-card">
-            <iframe class="box-card" id="video" width="120%" height="380px" scrolling="no" frameborder="no"
-                framespacing="0" :src="videos[index].url"></iframe>
-            <el-scrollbar>
-                <div class="scrollbar-flex-content">
-                    <p v-for="item in videos" class="scrollbar-item" @click="sel(item.value)">
-                        {{ item.name[lg] }}
-                    </p>
-                </div>
-            </el-scrollbar>
+    <div class="constainer">
+        <div class="box">
+            <div class="box-card">
+                <iframe class="box-card" id="video" width="120%" height="380px" scrolling="no" frameborder="no"
+                    framespacing="0" :src="videos[index].url"></iframe>
+                <el-scrollbar>
+                    <div class="scrollbar-flex-content">
+                        <p v-for="item in videos" class="scrollbar-item" @click="sel(item.value)">
+                            {{ item.name[lg] }}
+                        </p>
+                    </div>
+                </el-scrollbar>
+            </div>
         </div>
     </div>
 </template>
@@ -21,13 +23,19 @@ import 'element-plus/dist/index.css'
 const index = ref(0)
 const lg = langCode();
 const videos = lang().value.video_list
-
+onMounted(() => {
+  loadingView().value = false
+})
 const sel = (ind: number) => {
     index.value = ind;
 }
 </script>
 
 <style scoped>
+
+.constainer {
+    height:calc( 100vh - 80px );
+}
 .box {
     display: flex;
     align-items: center;

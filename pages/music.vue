@@ -113,7 +113,9 @@ const index = ref(0)
 
 const proc = ref(0)
 
-
+onMounted(() => {
+  loadingView().value = false
+})
 </script>
     
 <style>

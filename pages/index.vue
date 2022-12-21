@@ -41,6 +41,10 @@ const lg = langCode();
 
 const news = lang().value.news_content;
 
+onMounted(() => {
+  loadingView().value = false
+})
+
 const resolve = (mode: number, url: string) => {
   switch (mode) {
     case 0:

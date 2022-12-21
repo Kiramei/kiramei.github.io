@@ -1,5 +1,4 @@
 <template>
-
   <client-only>
     <ElMenu class="el-menu-demo" mode="horizontal" :ellipsis="false">
       <ElButton class="pl" @click="showDrawer = true" link>
@@ -28,7 +27,9 @@
         </template>
       </el-dropdown>
     </ElMenu>
-    <RouterView />
+    <div v-loading="loadingView().value">
+      <RouterView/>
+    </div>
     <ElDrawer v-model="showDrawer" direction="ltr" :show-close="false" :size="300">
       <template #header="{ titleId }">
         <h4 :class="titleId" :icon="Tools">
@@ -78,7 +79,8 @@ import {
   ElDrawer,
   ElMenu,
   ElTabPane,
-  ElTabs
+  ElTabs,
+  vLoading
 }
   from "element-plus"
 import 'element-plus/dist/index.css'
@@ -123,6 +125,7 @@ const route = useRoute()
 const activeIndex = ref(route.path.slice(1) || 'news')
 
 const handleClick = () => {
+  loadingView().value = true
   let s = '';
   if (activeIndex.value === 'news') s = '/'
   else s = `/${activeIndex.value}`
@@ -138,6 +141,7 @@ const tstClk = (e: number) => {
   lg.value = e
   lgr.value = lg.value;
 }
+
 
 </script>
 
@@ -234,7 +238,7 @@ body {
 .bottom {
   padding-bottom: 5px;
   background-color: var(--el-bg-color);
-  z-index: 100;
+  z-index: 2001;
   width: 100%;
   display: flex;
   justify-content: center;
