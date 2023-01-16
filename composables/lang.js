@@ -119,7 +119,7 @@ export const lang = () => useState('lang', () => (
             "title": ["流ストリーム", '涓涓细流', 'Streaming'],
             "src": "https://link.jscdn.cn/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBdGpqY2tQeDRTVW9uSEFJMXk0V3lkVHZUY3AwP2U9Y3pEWE1s.mp3",
         }, {
-            "title": ["空気の匂い", '空气的味道', 'The Smell of Air'],
+            "title": ["空気の匂い", '空气的芬芳', 'The Smell of Air'],
             "src": "https://link.jscdn.cn/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBdGpqY2tQeDRTVW9uSDNVTnAzMDJaR1JoNTNBP2U9VFgwdjFx.mp3",
         }, {
             "title": ["空が明くる日々", '空明的日子', 'Effulgent Day'],
