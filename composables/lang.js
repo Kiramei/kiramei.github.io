@@ -43,11 +43,27 @@ export const lang = () => useState('lang', () => (
                 url: "https://github.com/Kiramei",
             },
             {
+                text: ["ブログのぺーじへ", '前往博客主页', 'To Blog page'],
+                url: "https://kiramei.cn/blog",
+            },
+            {
                 text: ["元のぺーじへ", '前往先前的主页', 'To former page'],
                 url: "https://kiramei.cn/former",
             }
         ],
-        news_content: [{
+        news_content: [
+            {
+                "title": ['新しいページ', '新的网页', 'New Webpage'],
+                'content': [`ブログが終に完成しました！<br/>一先ずこのページは中国語で展示されています<br/>中国語が得意れば、是非お見てください！`,
+                    `Blog终于完成啦!<br/>可以的话请来看一下吧。`,
+                    `My blog has been completed!<br/>At present, it can only be displayed in Chinese<br/>If you're interested, please view my blog.`],
+                "date": '2023-1-17',
+                "hasBtn": true,
+                "btnUrl": "https://kiramei.cn/blog",
+                "btnMode": 2,
+                "btnName": ['ブログページへ', '前往项目页', 'To Blog page']
+            },
+            {
             "title": ['新しいアプリ', '新的软件', 'New App'],
             'content': [`<img src='https://kiramei.cn/former/webp/show.png' style="width: 100%;"/>｢Ascii Art」プロジェクトが終に完成いたしました、<br/>アプリはAscii動画の生成ができる、<br/>またこのあぷりはVideo2Text」の改正バージョンて、<br/>Windowsの环境が必要です、<br/>どうぞご覧で下さい。`,
                 `<img src='https://kiramei.cn/former/webp/show.png' style="width: 100%;"/>Ascii Art项目完成了，<br/>软件可以将视频转换为ascii序列，<br/>这个程序是Video2Text的改版，<br/>需要windows的运行环境，<br/>请前往项目页浏览一下吧。`,
