@@ -53,6 +53,17 @@ export const lang = () => useState('lang', () => (
         ],
         news_content: [
             {
+                "title": ['ミラーサイト', '镜像站模板', 'Mirror Website'],
+                'content': [`大学ミラーサイトがついに完成しました。これはミラーステーションのテンプレートで、一部のスタイルは清華大学のミラーステーションから収集され、文字の内容を変更してカスタムミラーステーションを生成することができ、興味があればプロジェクトのプロページを見てください。`,
+                    `大学镜像网站终于完成了，这是一个镜像站的模板，部分样式采集自清华大学的镜像站，可以更改文字内容生成自定义的镜像站，感兴趣的话可以查看项目网页。`,
+                    `The university image website is finally completed. This is a template of the image station. Some styles are collected from the image station of Tsinghua University. You can change the text content to generate a customized image station. If you are interested, you can view the project website.`],
+                "date": '2023-3-16',
+                "hasBtn": true,
+                "btnUrl": "https://kiramei.cn/szu-mirrors",
+                "btnMode": 2,
+                "btnName": ['ブログページへ', '前往项目页', 'To Blog page']
+            },
+            {
                 "title": ['新しいページ', '新的网页', 'New Webpage'],
                 'content': [`ブログが終に完成しました！<br/>一先ずこのページは中国語で展示されています<br/>中国語が得意れば、是非お見てください！`,
                     `Blog终于完成啦!<br/>可以的话请来看一下吧。`,
@@ -64,60 +75,60 @@ export const lang = () => useState('lang', () => (
                 "btnName": ['ブログページへ', '前往项目页', 'To Blog page']
             },
             {
-            "title": ['新しいアプリ', '新的软件', 'New App'],
-            'content': [`<img src='https://kiramei.cn/former/webp/show.png' style="width: 100%;"/>｢Ascii Art」プロジェクトが終に完成いたしました、<br/>アプリはAscii動画の生成ができる、<br/>またこのあぷりはVideo2Text」の改正バージョンて、<br/>Windowsの环境が必要です、<br/>どうぞご覧で下さい。`,
-                `<img src='https://kiramei.cn/former/webp/show.png' style="width: 100%;"/>Ascii Art项目完成了，<br/>软件可以将视频转换为ascii序列，<br/>这个程序是Video2Text的改版，<br/>需要windows的运行环境，<br/>请前往项目页浏览一下吧。`,
-                `<img src='https://kiramei.cn/former/webp/show.png' style="width: 100%;"/>Video2Text has been finished.<br/>It can process videos to ascii ones.<br/>It's a new version of Video2Text.<br/>It's still only available on Windows.<br/>Please go to the project page to view it.`],
-            "date": '2022-11-19',
-            "hasBtn": true,
-            "btnUrl": "https://github.com/Kiramei/ASCII-Art",
-            "btnMode": 2,
-            "btnName": ['アプリページへ', '前往项目页', 'To the App page']
-        },
-        {
-            "title": ["イラスト追加", '新增插画', 'New illustrations'],
-            "content": [`<img src='https://kiramei.cn/former/webp/bg%20(31).webp' style="width: 100%;"/>いろいろなイラストを追加しました,ぜひお見て下さい！`,
-                `<img src='https://kiramei.cn/former/webp/bg%20(31).webp' style="width: 100%;"/>新增了一些插画，看一下吧`,
-                `<img src='https://kiramei.cn/former/webp/bg%20(31).webp' style="width: 100%;"/>I added some new illustrations.<br/>You may go and view them.`],
-            "date": "2022-10-17",
-            "hasBtn": true,
-            "btnUrl": '/pic',
-            "btnMode": 1,
-            "btnName": ['イラストへ', '前往插画', 'To Gallery']
-        },
-        {
-            "title": ["音楽追加", '新增音乐', 'New music'],
-            "content": [`いろいろな歌を追加しました,ぜひお聞て下さい！`,
-                `新增了一些音乐，听一下吧`,
-                `I added some new music.<br/>You may go and listen to them.`],
-            "date": "2022-9-6",
-            "hasBtn": true,
-            "btnUrl": '/music',
-            "btnMode": 1,
-            "btnName": ['音楽へ', '前往音乐', 'To Music']
-        },
-        {
-            "title": ["新しいアプリ", '新的软件', 'New App'],
-            "content": ["｢Video2Text」プロジェクトが終に完成いたしました、<br/>アプリはAscii動画の生成ができる、<br/>一先ずこのアプリはPC限定です",
-                `Video2Text 项目完工了，<br/>这个软件可以将视频转换为Ascii序列，<br/>目前这个软件只能在电脑端运行`,
-                `Video2Text has been finished.<br/>It can process videos to ascii ones.<br/>It's only available on Windows.`],
-            "date": "2020-2-13",
-            "hasBtn": true,
-            "btnUrl": 'https://github.com/Kiramei/Video2Text',
-            "btnMode": 2,
-            "btnName": ['アプリページへ', '前往项目页', 'To the App page']
-        },
-        {
-            "title": ["個人情報", '个人信息', 'Personal Infomation'],
-            "content": ["僕は今は「Netease Cloud Music｣に音楽を作りているの、どうかよろしくたのむ！",
-                '从现在开始我将在网易云音乐作曲，请多关照！',
-                `From now on, I'll post some music on Netease Cloud Music.<br/>Please be concerned.`],
-            "date": "2020-1-26",
-            "hasBtn": true,
-            "btnUrl": 'https://music.163.com/#/artist?id=34227281',
-            "btnMode": 2,
-            "btnName": ['ネトイスページへ', '前往网易云音乐主页', 'To Netease Music page']
-        },
+                "title": ['新しいアプリ', '新的软件', 'New App'],
+                'content': [`<img src='https://kiramei.cn/former/webp/show.png' style="width: 100%;"/>｢Ascii Art」プロジェクトが終に完成いたしました、<br/>アプリはAscii動画の生成ができる、<br/>またこのあぷりはVideo2Text」の改正バージョンて、<br/>Windowsの环境が必要です、<br/>どうぞご覧で下さい。`,
+                    `<img src='https://kiramei.cn/former/webp/show.png' style="width: 100%;"/>Ascii Art项目完成了，<br/>软件可以将视频转换为ascii序列，<br/>这个程序是Video2Text的改版，<br/>需要windows的运行环境，<br/>请前往项目页浏览一下吧。`,
+                    `<img src='https://kiramei.cn/former/webp/show.png' style="width: 100%;"/>Video2Text has been finished.<br/>It can process videos to ascii ones.<br/>It's a new version of Video2Text.<br/>It's still only available on Windows.<br/>Please go to the project page to view it.`],
+                "date": '2022-11-19',
+                "hasBtn": true,
+                "btnUrl": "https://github.com/Kiramei/ASCII-Art",
+                "btnMode": 2,
+                "btnName": ['アプリページへ', '前往项目页', 'To the App page']
+            },
+            {
+                "title": ["イラスト追加", '新增插画', 'New illustrations'],
+                "content": [`<img src='https://kiramei.cn/former/webp/bg%20(31).webp' style="width: 100%;"/>いろいろなイラストを追加しました,ぜひお見て下さい！`,
+                    `<img src='https://kiramei.cn/former/webp/bg%20(31).webp' style="width: 100%;"/>新增了一些插画，看一下吧`,
+                    `<img src='https://kiramei.cn/former/webp/bg%20(31).webp' style="width: 100%;"/>I added some new illustrations.<br/>You may go and view them.`],
+                "date": "2022-10-17",
+                "hasBtn": true,
+                "btnUrl": '/pic',
+                "btnMode": 1,
+                "btnName": ['イラストへ', '前往插画', 'To Gallery']
+            },
+            {
+                "title": ["音楽追加", '新增音乐', 'New music'],
+                "content": [`いろいろな歌を追加しました,ぜひお聞て下さい！`,
+                    `新增了一些音乐，听一下吧`,
+                    `I added some new music.<br/>You may go and listen to them.`],
+                "date": "2022-9-6",
+                "hasBtn": true,
+                "btnUrl": '/music',
+                "btnMode": 1,
+                "btnName": ['音楽へ', '前往音乐', 'To Music']
+            },
+            {
+                "title": ["新しいアプリ", '新的软件', 'New App'],
+                "content": ["｢Video2Text」プロジェクトが終に完成いたしました、<br/>アプリはAscii動画の生成ができる、<br/>一先ずこのアプリはPC限定です",
+                    `Video2Text 项目完工了，<br/>这个软件可以将视频转换为Ascii序列，<br/>目前这个软件只能在电脑端运行`,
+                    `Video2Text has been finished.<br/>It can process videos to ascii ones.<br/>It's only available on Windows.`],
+                "date": "2020-2-13",
+                "hasBtn": true,
+                "btnUrl": 'https://github.com/Kiramei/Video2Text',
+                "btnMode": 2,
+                "btnName": ['アプリページへ', '前往项目页', 'To the App page']
+            },
+            {
+                "title": ["個人情報", '个人信息', 'Personal Infomation'],
+                "content": ["僕は今は「Netease Cloud Music｣に音楽を作りているの、どうかよろしくたのむ！",
+                    '从现在开始我将在网易云音乐作曲，请多关照！',
+                    `From now on, I'll post some music on Netease Cloud Music.<br/>Please be concerned.`],
+                "date": "2020-1-26",
+                "hasBtn": true,
+                "btnUrl": 'https://music.163.com/#/artist?id=34227281',
+                "btnMode": 2,
+                "btnName": ['ネトイスページへ', '前往网易云音乐主页', 'To Netease Music page']
+            },
         ],
         music_list: [{
             "title": ["最後は、海で来た", '终于到达大海', 'Finally arrive at the Sea'],
