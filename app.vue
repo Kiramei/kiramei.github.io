@@ -43,7 +43,7 @@ useHead({
   link: [{
     rel: 'icon',
     type: 'image/x-icon',
-    href: 'https://kiramei.cn/former/favicon.ico'
+    href: 'https://kiramei.cn/kiramei-former-site/favicon.ico'
   }]
 })
 

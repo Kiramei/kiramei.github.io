@@ -29,7 +29,7 @@ import { Picture } from '@element-plus/icons-vue';
 const imgs = computed(() => {
     var a = [];
     for (var i = 1; i <= 47; i++)
-        a.push(`https://kiramei.cn/former/webp/bg%20(${i}).webp`)
+        a.push(`https://kiramei.cn/kiramei-former-site/webp/bg%20(${i}).webp`)
     return a;
 })
 

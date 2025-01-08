@@ -3,7 +3,7 @@
         <div class="cover">
         </div>
         <div class="logo">
-            <img src="https://kiramei.cn/former/pic.png" alt="logo">
+            <img src="https://kiramei.cn/kiramei-former-site/pic.png" alt="logo">
         </div>
     </div>
 </template>
