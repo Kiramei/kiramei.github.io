@@ -1,69 +1,30 @@
 name: Deploy to GitHub Pages
-
 on:
-  # 每次推送到 main 分支时触发
+  # 每次推送到 `main` 分支时触发这个“工作流程”
+  # 如果你使用了别的分支名，请按需将 `main` 替换成你的分支名
   push:
     branches: [ main ]
-  # 允许在 Actions 标签页手动触发
+  # 允许你在 GitHub 上的 Actions 标签中手动触发此“工作流程”
   workflow_dispatch:
-
-# 权限设置，部署 Pages 必须
+# 允许 job 克隆 repo 并创建一个 page deployment
 permissions:
   contents: read
   pages: write
   id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout your repository using git
         uses: actions/checkout@v4
-
-      # 1. 安装 pnpm
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9  # 指定 pnpm 版本，通常用 9 或 8
-
-      # 2. 设置 Node.js 并启用 pnpm 缓存
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "pnpm"
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      # 3. 安装依赖 (使用 frozen-lockfile 保证版本一致)
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      # 4. 构建
-      - name: Build with Astro
-        run: |
-          pnpm run build \
-            --site "${{ steps.pages.outputs.origin }}" \
-            --base "${{ steps.pages.outputs.base_path }}"
-
-      # 5. 上传构建产物 (Astro 默认输出到 dist 目录)
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    name: Deploy
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
