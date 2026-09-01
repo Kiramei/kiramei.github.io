@@ -3,7 +3,6 @@ import type { MarkdownHeading } from "astro";
 import { widgetManager } from "../../utils/widget-manager";
 import Announcement from "./Announcement.astro";
 import Categories from "./Categories.astro";
-import MusicPlayer from "./MusicPlayer.svelte";
 import Profile from "./Profile.astro";
 import Tags from "./Tags.astro";
 import TOC from "./TOC.astro";
@@ -36,7 +35,6 @@ const componentMap = {
 	categories: Categories,
 	tags: Tags,
 	toc: TOC,
-	"music-player": MusicPlayer,
 	"site-stats": SiteStats,
 	calendar: Calendar,
 };

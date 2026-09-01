@@ -4,14 +4,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/700.css";
 
 import ConfigCarrier from "@components/ConfigCarrier.astro";
-import MusicPlayer from "@components/widget/MusicPlayer.svelte";
-import Pio from "@components/widget/Pio.svelte"; // 使用 Svelte 版本的 Pio 组件
-import {
-	musicPlayerConfig,
-	pioConfig,
-	profileConfig,
-	siteConfig,
-} from "@/config";
+import { profileConfig, siteConfig } from "@/config";
 import { widgetConfigs } from "../config";
 import { umamiConfig } from "../config.ts";
 import {
@@ -30,7 +23,6 @@ import { pathsEqual, url } from "../utils/url-utils";
 import "katex/dist/katex.css";
 import "../styles/mobile-navbar.css";
 import "../styles/wallpaper-navbar-transparent.css";
-import "../styles/fancybox-custom.css";
 import "../styles/expressive-code.css";
 import "../styles/panel-animations.css";
 
@@ -278,9 +270,6 @@ if (siteConfig.font) {
 
 		<slot name="head"></slot>
 
-		<!-- Pio 看板娘样式 - 仅在启用时加载 -->
-		{pioConfig.enable && <link rel="stylesheet" href="/pio/static/pio.css" />}
-
 		<link rel="alternate" type="application/rss+xml" title={profileConfig.name} href={`${Astro.site}rss.xml`}/>
 
 		<!-- Umami Analytics -->
@@ -297,12 +286,6 @@ if (siteConfig.font) {
 		{shouldShowTopHighlight && <div class="top-gradient-highlight"></div>}
 		<ConfigCarrier></ConfigCarrier>
 		<slot />
-		
-		<!-- Music Player - 仅在启用时加载 -->
-		{musicPlayerConfig.enable && <MusicPlayer client:load />}
-		
-		<!-- Pio 看板娘组件 - 仅在启用时加载 -->
-		{pioConfig.enable && <Pio client:load />}
 		
 		<!-- increase the page height during page transition to prevent the scrolling animation from jumping -->
 		<div id="page-height-extend" class="hidden h-[300vh]"></div>
@@ -548,6 +531,7 @@ function initCarousel() {
 	// 根据屏幕尺寸过滤有效的轮播项
 	const isMobile = window.innerWidth < 1024; // lg breakpoint
 	const validItems = Array.from(carouselItems).filter(item => {
+		if (item.querySelector('[alt^="Banner image"]')) return true;
 		if (isMobile) {
 			// 移动端：只显示有mobile图片的项目
 			return item.querySelector('.block.lg\\:hidden');
@@ -1026,128 +1010,4 @@ import '../scripts/code-collapse.js';
 <!-- 主题切换综合性能优化器（包含代码块优化、重型元素优化、性能诊断） -->
 <script>
 import '../scripts/theme-optimizer.js';
-</script>
-
-<script>
-import { Fancybox } from "@fancyapps/ui";
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
-
-// 使用单例模式避免重复初始化
-let fancyboxInstances = [];
-
-function initFancybox() {
-  // 不需要关闭所有实例，只需检查是否已经初始化
-  if (fancyboxInstances.length > 0) {
-    return; // 已经初始化，直接返回
-  }
-  
-  // 通用配置
-  const commonConfig = {
-    Thumbs: {
-      autoStart: true,
-      showOnStart: "yes",
-    },
-    Toolbar: {
-      display: {
-        left: ["infobar"],
-        middle: [
-          "zoomIn",
-          "zoomOut",
-          "toggle1to1",
-          "rotateCCW",
-          "rotateCW",
-          "flipX",
-          "flipY",
-        ],
-        right: ["slideshow", "thumbs", "close"],
-      },
-    },
-    animated: true,
-    dragToClose: true,
-    keyboard: {
-      Escape: "close",
-      Delete: "close",
-      Backspace: "close",
-      PageUp: "next",
-      PageDown: "prev",
-      ArrowUp: "next",
-      ArrowDown: "prev",
-      ArrowRight: "next",
-      ArrowLeft: "prev",
-    },
-    fitToView: true,
-    preload: 3,
-    infinite: true,
-    Panzoom: {
-      maxScale: 3,
-      minScale: 1,
-    },
-    caption: false
-  };
-  
-  // 为相册图片添加 Fancybox 支持
-  fancyboxInstances.push(
-    Fancybox.bind(".custom-md img, #post-cover img, .moment-images img", {
-      ...commonConfig,
-      groupAll: true,
-      Carousel: {
-        transition: "slide",
-        preload: 2,
-      },
-    })
-  );
-  
-  // 为相册中的链接添加 Fancybox 支持
-  fancyboxInstances.push(
-    Fancybox.bind(".moment-images a[data-fancybox]", {
-      ...commonConfig,
-      source: (el) => {
-        return el.getAttribute("data-src") || el.getAttribute("href");
-      },
-    })
-  );
-  
-  // 为单独的 fancybox 图片添加支持
-  fancyboxInstances.push(
-    Fancybox.bind("[data-fancybox]:not(.moment-images a)", commonConfig)
-  );
-}
-
-// 清理 Fancybox 实例
-function cleanupFancybox() {
-  fancyboxInstances.forEach(instance => {
-    if (instance && typeof instance.destroy === 'function') {
-      instance.destroy();
-    }
-  });
-  fancyboxInstances = [];
-}
-
-const setup = () => {
-  // 初始化 Fancybox
-  initFancybox();
-  
-  // 在页面视图更改时重新初始化
-  window.swup.hooks.on("page:view", () => {
-    // 清理旧实例
-    cleanupFancybox();
-    // 等待 DOM 更新后初始化
-    requestAnimationFrame(() => {
-      initFancybox();
-    });
-  });
-}
-
-if (window.swup) {
-  setup()
-} else {
-  document.addEventListener("swup:enable", setup)
-  
-  // 如果 swup 尚未初始化，则直接初始化
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initFancybox);
-  } else {
-    initFancybox();
-  }
-}
 </script>

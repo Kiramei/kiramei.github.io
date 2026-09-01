@@ -18,8 +18,6 @@ const postsCollection = defineCollection({
 		licenseUrl: z.string().optional().default(""),
 
 		/* Page encryption fields */
-		encrypted: z.boolean().optional().default(false),
-		password: z.string().optional().default(""),
 
 		/* Custom permalink */
 		permalink: z.string().optional(),
