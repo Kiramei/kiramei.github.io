@@ -1,5 +1,4 @@
 import type {
-	AnnouncementConfig,
 	ExpressiveCodeConfig,
 	FooterConfig,
 	FullscreenWallpaperConfig,
@@ -95,7 +94,7 @@ export const siteConfig: SiteConfig = {
 		},
 
 		waves: {
-			enable: false, // 关闭高开销水波纹以改善首屏与滚动性能
+			enable: true, // 保留横幅与正文之间的水波纹分隔
 			performanceMode: true,
 			mobileDisable: true,
 		},
@@ -298,18 +297,6 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 	hideDuringThemeTransition: true,
 };
 
-export const announcementConfig: AnnouncementConfig = {
-	title: "Announcement", // 公告标题
-	content: "Welcome to my blog! This is a sample announcement.", // 公告内容
-	closable: true, // 允许用户关闭公告
-	link: {
-		enable: true, // 启用链接
-		text: "Learn More", // 链接文本
-		url: "/about/", // 链接 URL
-		external: false, // 内部链接
-	},
-};
-
 export const footerConfig: FooterConfig = {
 	enable: false, // 是否启用Footer HTML注入功能
 	customHtml: "", // HTML格式的自定义页脚信息，例如备案号等，默认留空
@@ -344,22 +331,6 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			class: "onload-animation",
 			// 动画延迟时间（毫秒），用于错开动画效果
 			animationDelay: 0,
-		},
-		{
-			// 组件类型：公告组件
-			type: "announcement",
-			// 是否启用该组件（现在通过统一配置控制）
-			enable: true,
-			// 组件显示顺序
-			order: 2,
-			// 组件位置："top" 表示固定在顶部
-			position: "top",
-			// 所在侧边栏
-			sidebar: "left",
-			// CSS 类名
-			class: "onload-animation",
-			// 动画延迟时间
-			animationDelay: 50,
 		},
 		{
 			// 组件类型：分类组件
@@ -501,7 +472,6 @@ export const sakuraConfig: SakuraConfig = {
 // 导出所有配置的统一接口
 export const widgetConfigs = {
 	profile: profileConfig,
-	announcement: announcementConfig,
 	layout: sidebarLayoutConfig,
 	sakura: sakuraConfig,
 	fullscreenWallpaper: fullscreenWallpaperConfig,

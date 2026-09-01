@@ -153,7 +153,7 @@ export const projectsData: Project[] = [
     title: "DAFCN",
     description:
       "A Dual-Path Attention Fourier Convolutional Network for human motion prediction. One branch uses motion attention to preserve useful short-term cues while the other uses Fast Fourier Convolution to model long-range dynamics; their fused output targets both immediate accuracy and stable long-horizon forecasts.",
-    image: "",
+    image: "/assets/posts/dafcn-architecture.png",
     category: "AI",
     techStack: ["Python", "PyTorch", "Fast Fourier Convolution", "Motion Attention"],
     status: "completed",

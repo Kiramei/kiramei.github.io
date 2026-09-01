@@ -247,21 +247,6 @@ export type ExpressiveCodeConfig = {
 	hideDuringThemeTransition?: boolean; // 是否在主题切换时隐藏代码块
 };
 
-export type AnnouncementConfig = {
-	// enable属性已移除，现在通过sidebarLayoutConfig统一控制
-	title?: string; // 公告栏标题
-	content: string; // 公告栏内容
-	icon?: string; // 公告栏图标
-	type?: "info" | "warning" | "success" | "error"; // 公告类型
-	closable?: boolean; // 是否可关闭
-	link?: {
-		enable: boolean; // 是否启用链接
-		text: string; // 链接文字
-		url: string; // 链接地址
-		external?: boolean; // 是否外部链接
-	};
-};
-
 export type FooterConfig = {
 	enable: boolean; // 是否启用Footer HTML注入功能
 	customHtml?: string; // 自定义HTML内容，用于添加备案号等信息
@@ -270,7 +255,6 @@ export type FooterConfig = {
 // 组件配置类型定义
 export type WidgetComponentType =
 	| "profile"
-	| "announcement"
 	| "categories"
 	| "tags"
 	| "toc"

@@ -21,8 +21,6 @@ export const zh_TW: Translation = {
 	[Key.tableOfContents]: "目錄",
 
 	// 公告欄
-	[Key.announcement]: "公告",
-	[Key.announcementClose]: "關閉",
 
 	[Key.comments]: "評論",
 	[Key.friends]: "友鏈",
