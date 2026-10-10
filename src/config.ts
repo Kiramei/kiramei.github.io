@@ -111,13 +111,13 @@ export const siteConfig: SiteConfig = {
 		homeText: {
 			enable: true, // 在主页显示自定义文本
 			title: "キラメイのサイト", // 主页横幅主标题
-      subtitle: [
-        "深く考える必要はない。ただ、今ここにいることが大事だ",
-        "忘れられないわけじゃない。ただ、消えないだけ",
-        "気づいたら、君は僕の世界に静かに紛れ込んでいた",
-        "言葉にしなくても伝わる距離って、案外心地いい",
-        "特別な日じゃない。でも、悪くない一日だった"
-      ],
+			subtitle: [
+				"深く考える必要はない。ただ、今ここにいることが大事だ",
+				"忘れられないわけじゃない。ただ、消えないだけ",
+				"気づいたら、君は僕の世界に静かに紛れ込んでいた",
+				"言葉にしなくても伝わる距離って、案外心地いい",
+				"特別な日じゃない。でも、悪くない一日だった",
+			],
 			typewriter: {
 				enable: true, // 启用副标题打字机效果
 
@@ -249,37 +249,27 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/avatar.webp", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
 	name: "Kiramei",
-  bio: "A Student enthusiastic about AI, Frontend and Music",
+	bio: "Research, open-source software, and music-driven visual work.",
 	typewriter: {
 		enable: true,
 		speed: 80,
 	},
 	links: [
-    {
-      name: "GitHub",
-      icon: "fa6-brands:github",
-      url: "https://github.com/Kiramei",
-    },
 		{
-			name: "Bilibli",
+			name: "GitHub",
+			icon: "fa6-brands:github",
+			url: "https://github.com/Kiramei",
+		},
+		{
+			name: "Bilibili",
 			icon: "fa6-brands:bilibili",
 			url: "https://space.bilibili.com/43914903",
 		},
-    {
-      name: "Youtube",
-      icon: "fa6-brands:youtube",
-      url: "https://www.youtube.com/@kiramei-sakuratsuki",
-    },
 		{
-			name: "X",
-			icon: "simple-icons:x",
-			url: "https://x.com/Kiramei_Real",
+			name: "Youtube",
+			icon: "fa6-brands:youtube",
+			url: "https://www.youtube.com/@kiramei-sakuratsuki",
 		},
-    {
-      name: "Instagram",
-      icon: "simple-icons:instagram",
-      url: "https://www.instagram.com/kiramei_szuea",
-    },
 	],
 };
 

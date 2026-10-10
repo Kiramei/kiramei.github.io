@@ -110,7 +110,7 @@ export const ja: Translation = {
 
 	// プロジェクトページ
 	[Key.projects]: "プロジェクト",
-	[Key.projectsSubtitle]: "私の開発プロジェクトポートフォリオ",
+	[Key.projectsSubtitle]: "現在の活動と公開成果をまとめたポートフォリオ",
 	[Key.projectsAll]: "すべて",
 	[Key.projectsWeb]: "ウェブアプリケーション",
 	[Key.projectsMobile]: "モバイルアプリケーション",
@@ -125,11 +125,11 @@ export const ja: Translation = {
 	[Key.projectStatusInProgress]: "進行中",
 	[Key.projectStatusPlanned]: "予定",
 	[Key.projectsTotal]: "プロジェクト合計",
-	[Key.projectsCompleted]: "完了",
-	[Key.projectsInProgress]: "進行中",
+	[Key.projectsCompleted]: "公開済み",
+	[Key.projectsInProgress]: "開発中",
 	[Key.projectsTechStack]: "技術スタック統計",
 	[Key.projectsFeatured]: "注目プロジェクト",
-	[Key.projectsPlanned]: "予定",
+	[Key.projectsPlanned]: "アーカイブ",
 	[Key.projectsDemo]: "ライブデモ",
 	[Key.projectsSource]: "ソースコード",
 	[Key.projectsVisit]: "プロジェクトへ",
@@ -176,7 +176,8 @@ export const ja: Translation = {
 	[Key.atomHowToUse]:
 		"Feedly、Inoreaderまたは他のAtomリーダーを使用してこのサイトを購読することを推奨します。",
 	[Key.atomCopied]: "Atomリンクがクリップボードにコピーされました！",
-	[Key.atomCopyFailed]: "コピーに失敗しました。手動でリンクをコピーしてください",
+	[Key.atomCopyFailed]:
+		"コピーに失敗しました。手動でリンクをコピーしてください",
 
 	// スキルページ
 	[Key.skills]: "スキル",

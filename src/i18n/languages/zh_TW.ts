@@ -106,7 +106,7 @@ export const zh_TW: Translation = {
 
 	// 項目展示頁面
 	[Key.projects]: "項目展示",
-	[Key.projectsSubtitle]: "我的開發項目作品集",
+	[Key.projectsSubtitle]: "精選的目前項目與已發布成果",
 	[Key.projectsAll]: "全部",
 	[Key.projectsWeb]: "網頁應用",
 	[Key.projectsMobile]: "移動應用",
@@ -121,11 +121,11 @@ export const zh_TW: Translation = {
 	[Key.projectStatusInProgress]: "進行中",
 	[Key.projectStatusPlanned]: "計劃中",
 	[Key.projectsTotal]: "項目總數",
-	[Key.projectsCompleted]: "已完成",
-	[Key.projectsInProgress]: "進行中",
+	[Key.projectsCompleted]: "已發布",
+	[Key.projectsInProgress]: "活躍維護",
 	[Key.projectsTechStack]: "技術棧統計",
 	[Key.projectsFeatured]: "精選項目",
-	[Key.projectsPlanned]: "計劃中",
+	[Key.projectsPlanned]: "已歸檔",
 	[Key.projectsDemo]: "線上展示",
 	[Key.projectsSource]: "原始碼",
 	[Key.projectsVisit]: "前往專案",

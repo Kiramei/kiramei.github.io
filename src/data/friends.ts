@@ -28,46 +28,31 @@ export const friendsData: FriendItem[] = [
 		siteurl: "https://github.com/pur1fying",
 		tags: ["Backend", "Friend"],
 	},
-  {
-    id: 3,
-    title: "abinea",
-    imgurl: "https://avatars.githubusercontent.com/u/73068450?v=4",
-    desc: "A lazy coder👿, like everything particularly front-end. Vuejs enthusiast, also a rustacean.",
-    siteurl: "https://github.com/abinea",
-    tags: ["Frontend", "Friend"],
-  },
-  {
-    id: 4,
-    title: "wenjiu",
-    imgurl: "https://avatars.githubusercontent.com/u/118751360?v=4",
-    desc: "Dedicated into IC Design and opensource community. A rust enthusiast.",
-    siteurl: "https://github.com/CodeWenjiu",
-    tags: ["Frontend", "Friend"],
-  },
-  {
-    id: 5,
-    title: "SZUEA",
-    imgurl: "https://secure.gravatar.com/avatar/701963b2c32f961a203628dc561dd5cd331304d7e81250cfdb5927b80b4d54f6?s=75&d=mm&r=g",
-    desc: "Shenzhen University Electronic Association, a strong student-based team gathered lots of Computer Science enthusiasts.",
-    siteurl: "https://www.szuea.com/",
-    tags: ["Team", "Technology"],
-  },
-  {
-    id: 6,
-    title: "Aurora",
-    imgurl: "http://szu.moe/images/Aurora-Logo-NS.png",
-    desc: "Shenzhen University Cybersecurity Club, with the purpose of cultivating cybersecurity talents",
-    siteurl: "https://www.szu.moe/",
-    tags: ["Team", "Cybersecurity"],
-  },
-  {
-    id: 7,
-    title: "BAAS Wiki",
-    imgurl: "https://github.com/pur1fying/blue_archive_auto_script/blob/master/gui/assets/logo.png?raw=true",
-    desc: "Blue Archive Auto Script Manual",
-    siteurl: "https://baas.wiki",
-    tags: ["Docs"],
-  }
+	{
+		id: 3,
+		title: "abinea",
+		imgurl: "https://avatars.githubusercontent.com/u/73068450?v=4",
+		desc: "A lazy coder👿, like everything particularly front-end. Vuejs enthusiast, also a rustacean.",
+		siteurl: "https://github.com/abinea",
+		tags: ["Frontend", "Friend"],
+	},
+	{
+		id: 4,
+		title: "wenjiu",
+		imgurl: "https://avatars.githubusercontent.com/u/118751360?v=4",
+		desc: "Dedicated into IC Design and opensource community. A rust enthusiast.",
+		siteurl: "https://github.com/CodeWenjiu",
+		tags: ["Frontend", "Friend"],
+	},
+	{
+		id: 5,
+		title: "BAAS Wiki",
+		imgurl:
+			"https://github.com/pur1fying/blue_archive_auto_script/blob/master/gui/assets/logo.png?raw=true",
+		desc: "Blue Archive Auto Script Manual",
+		siteurl: "https://baas.wiki",
+		tags: ["Docs"],
+	},
 ];
 
 // 获取所有友情链接数据

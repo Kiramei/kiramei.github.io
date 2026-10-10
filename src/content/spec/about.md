@@ -1,10 +1,8 @@
-
-<div id="title" align=center>
+<div id="title" align="center">
 
 <div>
-<img src="https://raw.githubusercontent.com/Kiramei/Kiramei/refs/heads/main/logo_r.png" style="width:150px;" />
+<img src="https://raw.githubusercontent.com/Kiramei/Kiramei/refs/heads/main/logo_r.png" style="width:150px;" alt="Kiramei logo" />
 </div>
-
 
 # ✨ Nice to meet you — I'm Kiramei! ✨
 
@@ -12,64 +10,32 @@
 
 ---
 
-I used to work as a **full-stack developer**, but recently I shifted my entire focus toward **AI research** — and honestly, it feels like the universe I was always meant to exist in. 🧠🔥  
-My current interests revolve around:
+I build at the point where **research, open-source software, and visual creativity** meet.
 
-- Deep Learning
-- Diffusion Models
-- Computer Vision
-- Generative AI / Creative Systems
+My current technical focus is efficient generative AI: making Diffusion Transformers faster and lighter without retraining them. **ChebBooster** explores feature extrapolation for training-free acceleration, while **BaryCache** studies a smaller-memory cache built from a short history of model outputs.
 
-Anything that blends **creativity + intelligence** immediately captures my curiosity. 📸🤖  
-Research isn’t just work for me — it feels like a puzzle I *want* to solve.
+I also work on 3D human motion prediction. **CBFL** combines behavior-aware features from complementary mathematical spaces; **DAFCN** listens to motion at short and long time scales through attention and Fourier convolution.
 
----
+## What I'm building now
 
-## 🌸 A Little More About Me
+- Efficient inference methods for image and video generation
+- **BAAS Tauri**, the current cross-platform desktop home of the BAAS interface
+- Reproducible research code and writing tools, including **Kiramei Preprint Style**
+- Music-driven visual work and cover-song MV production
 
-Well… here’s the not-so-secret part:  
-I’m also (very unapologetically) a **hardcore anime and 2D enthusiast**. (๑>◡<๑)💖
+## Beyond code
 
-Technology and passion — whether that’s code, models, or fiction — both deserve to be lived **fully**.
+Anime, music, and visual storytelling are a real part of how I think. I enjoy turning a song into a sequence of images, typography, motion, and atmosphere—and writing down the production choices afterwards so the work has a life beyond the final video.
 
----
+## Find my public work
 
-## 🎓 Background
+- [GitHub](https://github.com/Kiramei) — source code and research implementations
+- [Bilibili](https://space.bilibili.com/43914903) — cover songs and music videos
+- [YouTube](https://www.youtube.com/@kiramei-sakuratsuki) — video archive
+- [Projects](https://kiramei.cn/projects/) — a curated overview of current and released work
 
-- 🏫 Former 2023 President of **SZUEA — Shenzhen University Electronics Association**  
-  (Built a tech community, hosted workshops, and supported student research.)
-
-- ⛩ Once studied abroad at **Chiba University, Japan**, which deeply shaped my mindset, aesthetics, and worldview.  
-  Japan still feels like another version of home.
+For privacy, this page intentionally keeps personal contact details, current location, and private affiliations off the public site.
 
 ---
 
-## 📬 Contact
-
-If you're interested in:
-
-- Collaborating on research
-- Learning more about **SZUEA**
-- Open-source work
-- Or even just sharing common interests
-
-feel free to reach out — I’m always open to meaningful connections. 📮
-
-📧 Email: **[dianxiejun@szuea.com](mailto:dianxiejun@szuea.com)**  
-🔗 Official SZUEA Website: **[szuea.com](https://www.szuea.com)**  
-🌐 Personal Page: **[kiramei.cn](https://kiramei.cn)**
-
----
-
-Thanks for reading — and here’s to the stories, ideas, and unexpected encounters the future will bring.  
-₍₍ (ง ˙ω˙)ว ⁾⁾🌟
-
-<div id="title" align=center>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Kiramei/Kiramei/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Kiramei/Kiramei/output/github-contribution-grid-snake.svg" />
-  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/Kiramei/Kiramei/output/github-contribution-grid-snake.svg" />
-</picture>
-
-</div>
+Thanks for visiting. I hope you find something here that is useful, beautiful, or unexpectedly both. 🌟

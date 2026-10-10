@@ -108,7 +108,7 @@ export const en: Translation = {
 
 	// Projects Page
 	[Key.projects]: "Projects",
-	[Key.projectsSubtitle]: "My development project portfolio",
+	[Key.projectsSubtitle]: "A curated portfolio of current and released work",
 	[Key.projectsAll]: "All",
 	[Key.projectsWeb]: "Web Applications",
 	[Key.projectsMobile]: "Mobile Applications",
@@ -123,11 +123,11 @@ export const en: Translation = {
 	[Key.projectStatusInProgress]: "In Progress",
 	[Key.projectStatusPlanned]: "Planned",
 	[Key.projectsTotal]: "Total Projects",
-	[Key.projectsCompleted]: "Completed",
-	[Key.projectsInProgress]: "In Progress",
+	[Key.projectsCompleted]: "Released",
+	[Key.projectsInProgress]: "Active",
 	[Key.projectsTechStack]: "Tech Stack Statistics",
 	[Key.projectsFeatured]: "Featured Projects",
-	[Key.projectsPlanned]: "Planned",
+	[Key.projectsPlanned]: "Archived",
 	[Key.projectsDemo]: "Live Demo",
 	[Key.projectsSource]: "Source Code",
 	[Key.projectsVisit]: "Visit Project",
